@@ -39,6 +39,10 @@ namespace BookLibrarySystem.Domain.Users
             return user;
         }
 
+        public void UpdateName(string firstName, string lastName)
+        {
+            Name = new Name(firstName, lastName);
+        }
         public IReadOnlyList<IDomainEvent> GetDomainEvents() => _domainEvents.ToList();
 
         public void ClearDomainEvents() => _domainEvents.Clear();

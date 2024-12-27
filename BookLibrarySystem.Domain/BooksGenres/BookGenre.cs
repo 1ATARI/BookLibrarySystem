@@ -24,4 +24,9 @@ namespace BookLibrarySystem.Domain.BooksGenres
 
         public Guid GenreId { get; private set; }
         public Genre Genre { get; private set; }
+
+        public void UpdateGenre(Genre newGenre)
+        {
+            Genre = newGenre;
+        }
     }}

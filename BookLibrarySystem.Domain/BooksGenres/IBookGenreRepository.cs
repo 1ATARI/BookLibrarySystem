@@ -2,11 +2,11 @@ namespace BookLibrarySystem.Domain.BooksGenres;
 
 public interface IBookGenreRepository
 {
-    BookGenre GetById(Guid bookGenreId);
-    IEnumerable<BookGenre> GetAll();
-    IEnumerable<BookGenre> GetByBookId(Guid bookId);
-    IEnumerable<BookGenre> GetByGenreId(Guid genreId);
-    void Add(BookGenre bookGenre);
-    void Delete(Guid bookGenreId);
-    bool Exists(Guid bookGenreId);
+    Task<BookGenre?> GetByIdAsync(Guid bookGenreId , CancellationToken cancellationToken);
+    Task<IEnumerable<BookGenre>> GetAllAsync(CancellationToken cancellationToken);
+    Task<IEnumerable<BookGenre?>> GetByBookIdAsync(Guid bookId , CancellationToken cancellationToken);
+    Task<IEnumerable<BookGenre>> GetByGenreIdAsync(Guid genreId , CancellationToken cancellationToken);
+    Task AddAsync(BookGenre bookGenre , CancellationToken cancellationToken);
+    Task DeleteAsync(Guid bookGenreId , CancellationToken cancellationToken);
+    Task<bool> ExistsAsync(Guid bookGenreId , CancellationToken cancellationToken);
 }

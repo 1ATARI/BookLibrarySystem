@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using BookLibrarySystem.Domain.UsersBooks;
 
 namespace BookLibrarySystem.Domain.Abstraction;
 

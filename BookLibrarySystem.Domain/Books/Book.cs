@@ -1,12 +1,11 @@
 ﻿using BookLibrarySystem.Domain.Abstraction;
-using System;
-using System.Collections.Generic;
+using BookLibrarySystem.Domain.Books.Events;
 using BookLibrarySystem.Domain.BooksGenres;
 using BookLibrarySystem.Domain.Genres;
 
 namespace BookLibrarySystem.Domain.Books
 {
- public sealed class Book : Entity
+    public sealed class Book : Entity
     {
         private Book(
             Guid id,
@@ -14,19 +13,22 @@ namespace BookLibrarySystem.Domain.Books
             Description description,
             DateTime publicationDate,
             int pages,
-            bool isAvailable)
+            bool isAvailable,
+            Guid authorId)
             : base(id)
         {
             if (title == null) throw new ArgumentNullException(nameof(title));
             if (description == null) throw new ArgumentNullException(nameof(description));
             if (publicationDate == default) throw new ArgumentException("Invalid publication date.", nameof(publicationDate));
             if (pages <= 0) throw new ArgumentOutOfRangeException(nameof(pages), "Pages must be greater than zero.");
+            if (authorId == Guid.Empty) throw new ArgumentException("Author ID must not be empty.", nameof(authorId));
 
             Title = title;
             Description = description;
             PublicationDate = publicationDate;
             Pages = pages;
             IsAvailable = isAvailable;
+            AuthorId = authorId;
             Genres = new List<BookGenre>();
         }
 
@@ -37,39 +39,59 @@ namespace BookLibrarySystem.Domain.Books
         public DateTime PublicationDate { get; private set; }
         public int Pages { get; private set; }
         public bool IsAvailable { get; private set; }
-
+        public Guid AuthorId { get; private set; }
         public ICollection<BookGenre> Genres { get; private set; }
 
-        public static Book Create(Title title, Description description, DateTime publicationDate, int pages)
+        public static Book Create(Title title, Description description, DateTime publicationDate, int pages, Guid authorId)
         {
-            return new Book(
+            var book = new Book(
                 Guid.NewGuid(),
                 title,
                 description,
                 publicationDate,
                 pages,
-                isAvailable: true);
+                isAvailable: true,
+                authorId: authorId);
+                book.RaiseDomainEvent(new BookCreatedDomainEvent(book.Id));
+            
+            return book;
         }
 
-        public void UpdateDetails(Title title, Description description)
+        public void UpdateDetails(Title title, Description description, DateTime publicationDate, int pages, Guid authorId)
         {
             if (title == null) throw new ArgumentNullException(nameof(title));
             if (description == null) throw new ArgumentNullException(nameof(description));
+            if (authorId == Guid.Empty) throw new ArgumentException("Author ID must not be empty.", nameof(authorId));
 
             Title = title;
             Description = description;
+            PublicationDate = publicationDate;
+            Pages = pages;
+            AuthorId = authorId;
         }
+
 
         public Result MarkAsUnavailable()
         {
             if (!IsAvailable)
             {
-                return Result.Failure(BookErrors.BookAlreadyUnavailable);
+                return Result.Failure(BookErrors.BookUnavailable);
             }
 
             IsAvailable = false;
             return Result.Success();
         }
+        public Result MarkAsAvailable()
+        {
+            if (IsAvailable)
+            {
+                return Result.Failure(BookErrors.BookAlreadyAvailable);
+            }
+
+            IsAvailable = true;
+            return Result.Success();
+        }
+
 
         public Result AddGenre(Genre genre)
         {
@@ -83,5 +105,6 @@ namespace BookLibrarySystem.Domain.Books
             Genres.Add(new BookGenre(Id, genre.Id));
             return Result.Success();
         }
+
     }
 }

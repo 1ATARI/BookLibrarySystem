@@ -7,8 +7,7 @@ namespace BookLibrarySystem.Domain.UsersBooks
 {
     public sealed class UserBook : Entity
     {        
-        private readonly IUserRepository _userRepository;
-        private readonly IBookRepository _bookRepository;
+
         private UserBook(
             Guid id,
             Guid userId,
@@ -50,24 +49,35 @@ namespace BookLibrarySystem.Domain.UsersBooks
                 borrowedDate,
                 null);
         }
+        public Result UpdateBorrowedDate(DateTime borrowedDate)
+        {
+            if (borrowedDate > DateTime.Now)
+            {
+                return Result.Failure(UserBookErrors.InvalidBorrowedDate);
+            }
 
+            BorrowedDate = borrowedDate;
+            return Result.Success();
+        }
         public Result Return(DateTime returnedDate)
         {
             if (IsReturned)
             {
-                return Result.Failure(UserBookError.AlreadyReturned);
+                return Result.Failure(UserBookErrors.AlreadyReturned);
             }
             if (returnedDate < BorrowedDate)
             {
-                return Result.Failure(UserBookError.InvalidReturnDate);
+                return Result.Failure(UserBookErrors.InvalidReturnDate);
             }
 
             ReturnedDate = returnedDate;
 
-            this.RaiseDomainEvent(new UserBookReturnedDomainEvent(Id, UserId, BookId, ReturnedDate.Value));
+            RaiseDomainEvent(new UserBookReturnedDomainEvent(Id, UserId, BookId, ReturnedDate.Value));
 
             return Result.Success();
         }
+        
+        
 
 
 

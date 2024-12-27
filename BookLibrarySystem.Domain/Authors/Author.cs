@@ -21,8 +21,13 @@ public sealed class Author : Entity
         return new Author(Guid.NewGuid(), name);
     }
     
-    public void AddBook(Book book)
+    public Result AddBook(Book book)
     {
+        if (Books.Any(b => b.Id == book.Id))
+        {
+            return Result.Failure(AuthorErrors.BookAlreadyAssigned);
+        }
         Books.Add(book);
+        return Result.Success();
     }
 }

@@ -28,6 +28,15 @@ namespace BookLibrarySystem.Domain.Genres
         {
             return new Genre(Guid.NewGuid(), name, description);
         }
+        public void UpdateDetails(Name name, Description description)
+        {
+            if (name == null) throw new ArgumentNullException(nameof(name));
+            if (description == null) throw new ArgumentNullException(nameof(description));
+
+            Name = name;
+            Description = description;
+
+        }
     }
     
 }
