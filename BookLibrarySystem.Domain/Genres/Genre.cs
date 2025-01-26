@@ -35,6 +35,7 @@ namespace BookLibrarySystem.Domain.Genres
 
             Name = name;
             Description = description;
+            
 
         }
     }

@@ -17,7 +17,7 @@ public class GetBookGenreQueryHandler : IQueryHandler<GetBookGenreQuery, Result<
     public async Task<Result<Result<BookGenre>>> Handle(GetBookGenreQuery request, CancellationToken cancellationToken)
     {
         // Fetch the BookGenre by Id
-        var bookGenre = await _bookGenreRepository.GetByIdAsync(request.BookGenreId ,cancellationToken);
+        var bookGenre = await _bookGenreRepository.GetByIdAsync(request.BookGenreId ,"Book,Genre",cancellationToken);
         if (bookGenre == null)
         {
             // Return a failure wrapped inside another Result

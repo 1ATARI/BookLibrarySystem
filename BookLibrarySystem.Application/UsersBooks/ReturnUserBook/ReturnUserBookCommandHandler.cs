@@ -26,7 +26,7 @@ internal sealed class ReturnBookCommandHandler : ICommandHandler<ReturnBookComma
     {
         try
         {
-            var userBook = await _userBookRepository.GetByIdAsync(request.UserBookId,cancellationToken);
+            var userBook = await _userBookRepository.GetByIdAsync(request.UserBookId,null, cancellationToken);
             if (userBook == null)
             {
                 return Result.Failure(UserBookErrors.UserBookNotFound);
@@ -39,7 +39,7 @@ internal sealed class ReturnBookCommandHandler : ICommandHandler<ReturnBookComma
 
             userBook.Return(request.ReturnedDate);
 
-            var book = await _bookRepository.GetByIdAsync(userBook.BookId ,cancellationToken);
+            var book = await _bookRepository.GetByIdAsync(userBook.BookId, "User,Genre", cancellationToken);
             if (book == null)
             {
                 return Result.Failure(BookErrors.NotFound);
@@ -51,7 +51,7 @@ internal sealed class ReturnBookCommandHandler : ICommandHandler<ReturnBookComma
                 return Result.Failure(markAsAvailableResult.Error);
             }
 
-            await _userBookRepository.UpdateAsync(userBook ,cancellationToken);
+            _userBookRepository.Update(userBook);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
 
             return Result.Success();

@@ -2,39 +2,47 @@
 using BookLibrarySystem.Application.Exceptions;
 using BookLibrarySystem.Domain.Abstraction;
 using BookLibrarySystem.Domain.Authors;
+using BookLibrarySystem.Domain.Books;
 
 namespace BookLibrarySystem.Application.Authors.AddBookToAuthor;
+
+
 
 public class AddBookToAuthorCommandHandler : ICommandHandler<AddBookToAuthorCommand>
 {
     private readonly IAuthorRepository _authorRepository;
+    private readonly IBookRepository _bookRepository;
+
     private readonly IUnitOfWork _unitOfWork;
 
-    public AddBookToAuthorCommandHandler(IAuthorRepository authorRepository, IUnitOfWork unitOfWork)
+    public AddBookToAuthorCommandHandler(IAuthorRepository authorRepository, IUnitOfWork unitOfWork, IBookRepository bookRepository)
     {
         _authorRepository = authorRepository;
         _unitOfWork = unitOfWork;
+        _bookRepository = bookRepository;
     }
 
     public async Task<Result> Handle(AddBookToAuthorCommand request, CancellationToken cancellationToken)
     {
         try
         {
-            var author = await _authorRepository.GetByIdAsync(request.AuthorId,cancellationToken);
+            if (request.AuthorId == Guid.Empty)
+            {
+                return Result.Failure(AuthorErrors.InvalidAuthorId);
+            }
 
+            var author = await _authorRepository.GetByIdAsync(request.AuthorId, cancellationToken: cancellationToken);
             if (author == null)
             {
                 return Result.Failure(AuthorErrors.NotFound);
             }
 
-            if (author.Books.Any(b => b.Id == request.Book.Id))
-            {
-                return Result.Failure(AuthorErrors.BookAlreadyAssigned);
-            }
+            var title = new Title(request.BookDto.Title);
+            var description = new Description(request.BookDto.Description);
+            var book = Book.Create(title, description, request.BookDto.PublicationDate, request.BookDto.Pages, request.AuthorId);
+            await _bookRepository.AddAsync(book , cancellationToken);
 
-            author.AddBook(request.Book);
 
-            await _authorRepository.UpdateAsync(author,cancellationToken);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
 
             return Result.Success();
@@ -49,3 +57,4 @@ public class AddBookToAuthorCommandHandler : ICommandHandler<AddBookToAuthorComm
         }
     }
 }
+

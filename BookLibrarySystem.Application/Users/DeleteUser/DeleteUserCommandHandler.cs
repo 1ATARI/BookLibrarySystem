@@ -8,14 +8,14 @@ namespace BookLibrarySystem.Application.Users.DeleteUser;
 
 internal sealed class DeleteUserCommandHandler : ICommandHandler<DeleteUserCommand, Result>
 {
-    private readonly IUserRepository _userRepository;
-    private readonly UserManager<User> _userManager;
+    private readonly IApplicationUserRepository _applicationUserRepository;
+    private readonly UserManager<ApplicationUser> _userManager;
     private readonly IUnitOfWork _unitOfWork;
 
-    public DeleteUserCommandHandler(IUserRepository userRepository, UserManager<User> userManager,
+    public DeleteUserCommandHandler(IApplicationUserRepository applicationUserRepository, UserManager<ApplicationUser> userManager,
         IUnitOfWork unitOfWork)
     {
-        _userRepository = userRepository;
+        _applicationUserRepository = applicationUserRepository;
         _userManager = userManager;
         _unitOfWork = unitOfWork;
     }
@@ -24,7 +24,7 @@ internal sealed class DeleteUserCommandHandler : ICommandHandler<DeleteUserComma
     {
         try
         {
-            var user = await _userRepository.GetByIdAsync(request.UserId, cancellationToken);
+            var user = await _applicationUserRepository.GetByIdAsync(request.UserId,null, cancellationToken);
             if (user == null)
             {
                 return Result.Failure(new Error("UserNotFound", "The user does not exist."));
@@ -42,7 +42,7 @@ internal sealed class DeleteUserCommandHandler : ICommandHandler<DeleteUserComma
         }
         catch (ConcurrencyException)
         {
-            return Result.Failure<User>(UserErrors.Overlap);
+            return Result.Failure<ApplicationUser>(ApplicationUserErrors.Overlap);
         }
         catch (Exception ex)
         {

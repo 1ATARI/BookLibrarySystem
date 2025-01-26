@@ -30,7 +30,7 @@ namespace BookLibrarySystem.Domain.UsersBooks
         private UserBook() { } // For EF Core
 
         public Guid UserId { get; private set; }
-        public User User { get; private set; }
+        public ApplicationUser ApplicationUser { get; private set; }
 
         public Guid BookId { get; private set; }
         public Book Book { get; private set; }

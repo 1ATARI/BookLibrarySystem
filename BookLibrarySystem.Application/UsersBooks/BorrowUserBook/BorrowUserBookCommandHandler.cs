@@ -25,7 +25,7 @@ internal sealed class BorrowBookCommandHandler : ICommandHandler<BorrowBookComma
     {
         try
         {
-            var book = await _bookRepository.GetByIdAsync(request.BookId ,cancellationToken);
+            var book = await _bookRepository.GetByIdAsync(request.BookId, cancellationToken: cancellationToken);
             if (book == null || !book.IsAvailable)
             {
                 return Result.Failure<Guid>(BookErrors.BookUnavailable);

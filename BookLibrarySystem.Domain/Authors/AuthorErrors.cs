@@ -7,6 +7,9 @@ public class AuthorErrors
     public static Error NotFound = new(
             "Author.NotFound",
             "Author not found.");
+    public static Error InvalidAuthorId = new(
+            "Author.InvalidAuthorId",
+            "Invalid Autor Id.");
     public static Error AuthorAlreadyExists = new(
             "Author.AlreadyExists",
             "An author with the same name already exists.");

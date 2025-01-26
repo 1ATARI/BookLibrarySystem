@@ -23,7 +23,7 @@ namespace BookLibrarySystem.Application.UsersBooks.UpdateUserBook;
         {
             try
             {
-                var userBook = await _userBookRepository.GetByIdAsync(request.UserBookId,cancellationToken);
+                var userBook = await _userBookRepository.GetByIdAsync(request.UserBookId,null,cancellationToken);
                 if (userBook == null)
                 {
                     return Result.Failure<UserBook>(UserBookErrors.UserBookNotFound);
@@ -44,7 +44,7 @@ namespace BookLibrarySystem.Application.UsersBooks.UpdateUserBook;
                     }
                 }
 
-                await _userBookRepository.UpdateAsync(userBook,cancellationToken);
+                _userBookRepository.Update(userBook);
                 await _unitOfWork.SaveChangesAsync(cancellationToken);
 
                 return Result.Success(userBook);

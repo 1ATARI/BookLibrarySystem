@@ -5,19 +5,19 @@ using MediatR;
 
 namespace BookLibrarySystem.Application.Users.GetAlUsers;
 
-internal sealed class GetAllUsersQueryHandler : IQueryHandler<GetAllUsersQuery, IEnumerable<User>>
+internal sealed class GetAllUsersQueryHandler : IQueryHandler<GetAllUsersQuery, IEnumerable<ApplicationUser>>
 {
-    private readonly IUserRepository _userRepository;
+    private readonly IApplicationUserRepository _applicationUserRepository;
 
-    public GetAllUsersQueryHandler(IUserRepository userRepository)
+    public GetAllUsersQueryHandler(IApplicationUserRepository applicationUserRepository)
     {
-        _userRepository = userRepository;
+        _applicationUserRepository = applicationUserRepository;
     }
 
-    public async Task<Result<IEnumerable<User>>> Handle(GetAllUsersQuery request, CancellationToken cancellationToken)
+    public async Task<Result<IEnumerable<ApplicationUser>>> Handle(GetAllUsersQuery request, CancellationToken cancellationToken)
     {
 
-        var users = await _userRepository.GetAllAsync(cancellationToken);
+        var users = await _applicationUserRepository.GetAllAsync(cancellationToken: cancellationToken);
         
         return Result.Success(users);
     }

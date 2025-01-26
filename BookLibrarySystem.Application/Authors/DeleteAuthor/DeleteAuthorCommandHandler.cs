@@ -20,14 +20,13 @@ public class DeleteAuthorCommandHandler : ICommandHandler<DeleteAuthorCommand>
     {
         try
         {
-            var author = await _authorRepository.GetByIdAsync(request.AuthorId ,cancellationToken);
+            var author = await _authorRepository.GetByIdAsync(request.AuthorId, "Books", cancellationToken);
 
             if (author == null)
             {
                 return Result.Failure(AuthorErrors.NotFound);
             }
 
-            // Check if the author has books or other dependencies
             if (author.Books.Any())
             {
                 return Result.Failure(AuthorErrors.CannotDeleteAuthorWithBooks);

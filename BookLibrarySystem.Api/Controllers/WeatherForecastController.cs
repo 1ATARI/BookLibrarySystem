@@ -1,3 +1,4 @@
+using BookLibrarySystem.Domain.Authors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookLibrarySystem.Api.Controllers;
@@ -17,7 +18,6 @@ public class WeatherForecastController : ControllerBase
     {
         _logger = logger;
     }
-
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()
     {

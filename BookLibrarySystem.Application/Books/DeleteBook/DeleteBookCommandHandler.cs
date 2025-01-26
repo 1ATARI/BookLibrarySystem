@@ -20,7 +20,7 @@ public class DeleteBookCommandHandler : ICommandHandler<DeleteBookCommand>
     {
         try
         {
-            var exists = await _bookRepository.ExistsAsync(request.BookId , cancellationToken);
+            var exists = await _bookRepository.ExistsByIdAsync(request.BookId , cancellationToken);
 
             if (!exists)
             {

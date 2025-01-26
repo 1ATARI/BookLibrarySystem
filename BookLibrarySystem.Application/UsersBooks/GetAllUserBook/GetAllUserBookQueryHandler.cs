@@ -15,7 +15,7 @@ internal sealed class GetAllUserBookQueryHandler : IQueryHandler<GetAllUserBookQ
 
     public async  Task<Result<IEnumerable<UserBook>>> Handle(GetAllUserBookQuery request, CancellationToken cancellationToken)
     {
-        var userBooks =await  _userBookRepository.GetAllAsync(cancellationToken);
+        var userBooks =await  _userBookRepository.GetAllAsync(null , "User,Book",cancellationToken:cancellationToken);
         
         return Result.Success(userBooks);
     }

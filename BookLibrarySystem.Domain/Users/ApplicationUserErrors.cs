@@ -2,7 +2,7 @@
 
 namespace BookLibrarySystem.Domain.Users;
 
-public static class UserErrors
+public static class ApplicationUserErrors
 {
     public static Error NotFound = new(
         "User.UserNotFound",

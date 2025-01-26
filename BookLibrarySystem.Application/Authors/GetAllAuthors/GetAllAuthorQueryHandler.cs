@@ -4,7 +4,7 @@ using BookLibrarySystem.Domain.Authors;
 
 namespace BookLibrarySystem.Application.Authors.GetAllAuthors;
 
-public class GetAllAuthorQueryHandler : IQueryHandler<GetAllAuthorQuery, IEnumerable<Author>>
+public class GetAllAuthorQueryHandler : IQueryHandler<GetAllAuthorQuery, IEnumerable<AuthorResponseDto>>
 {
     private readonly IAuthorRepository _authorRepository;
 
@@ -14,13 +14,32 @@ public class GetAllAuthorQueryHandler : IQueryHandler<GetAllAuthorQuery, IEnumer
     }
 
     
-    public async Task<Result<IEnumerable<Author>>> Handle(GetAllAuthorQuery request, CancellationToken cancellationToken)
+    public async Task<Result<IEnumerable<AuthorResponseDto>>> Handle(
+        GetAllAuthorQuery request,
+        CancellationToken cancellationToken)
     {
-        var authors = await _authorRepository.GetAllAsync(cancellationToken);
+        int skip = (request.PageNumber - 1) * request.PageSize;
 
-        return Result.Success(authors);
-        
-        
-        
+        var authors = await _authorRepository.GetAllAsync(
+            skip: skip,
+            take: request.PageSize,
+            includeProperties: "Books",
+            cancellationToken: cancellationToken);
+
+        var authorDtos = authors.Select(a => new AuthorResponseDto(
+            a.Id,
+            a.Name.FirstName,
+            a.Name.LastName,
+            a.Books.Select(b => new BookResponseDto(
+                b.Id,
+                b.Title.Value,
+                b.Description.Value,
+                b.PublicationDate,
+                b.Pages,
+                b.IsAvailable)).ToList()));
+
+        return Result.Success(authorDtos);
     }
+        
+    
 }

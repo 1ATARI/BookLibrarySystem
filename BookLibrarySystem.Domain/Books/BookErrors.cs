@@ -11,6 +11,9 @@ public static class BookErrors
     public static Error InvalidGenre = new(
         "Book.Genre",
         "The Genre for this book is invalid");
+    public static Error InvalidBookId = new(
+        "Book.InvalidAuthorId",
+        "The Id for this book is invalid");
 
     public static Error DuplicateGenre = new(
         "Book.Duplicate",
@@ -45,6 +48,9 @@ public static class BookErrors
         "The book is already available.");
 
     public static Error Overlap = new(
-        "UserBook.Overlap",
-        "A concurrency conflict occurred. Please retry..");
+        "Book.Overlap",
+        "A concurrency conflict occurred. Please retry.."); 
+    public static Error BookIsNull = new(
+        "Book.BookIsNull",
+        "Book could not be null");
 }

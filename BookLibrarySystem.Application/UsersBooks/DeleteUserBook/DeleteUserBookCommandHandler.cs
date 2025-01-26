@@ -20,7 +20,7 @@ internal sealed class DeleteUserBookCommandHandler : ICommandHandler<DeleteUserB
     {
         try
         {
-            var exists = await _userBookRepository.ExistsAsync(request.UserBookId,cancellationToken);
+            var exists = await _userBookRepository.ExistsByIdAsync(request.UserBookId,cancellationToken);
             if (!exists)
             {
                 return Result.Failure(UserBookErrors.UserBookNotFound);

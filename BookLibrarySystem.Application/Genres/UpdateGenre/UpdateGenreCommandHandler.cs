@@ -22,7 +22,7 @@ internal sealed class UpdateGenreCommandHandler : ICommandHandler<UpdateGenreCom
     {
         try
         {
-            var genre = await _genreRepository.GetByIdAsync(request.Id, cancellationToken);
+            var genre = await _genreRepository.GetByIdAsync(request.Id,null, cancellationToken);
             if (genre == null)
             {
                 return Result.Failure<Genre>(GenreErrors.NotFound);

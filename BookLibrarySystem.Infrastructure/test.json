@@ -1,0 +1,60 @@
+[
+  {
+    "Id": "book-1-id",
+    "Title": "Book Title 1",
+    "Description": "Description of Book 1",
+    "PublicationDate": "2022-01-01",
+    "Pages": 300,
+    "IsAvailable": true,
+    "AuthorId": "author-1-id",
+    "Author": {
+      "Id": "author-1-id",
+      "Name": "Author Name 1",
+      "Books": [] // Lazy-loaded or explicitly loaded if needed
+    },
+    "Genres": [
+      {
+        "BookId": "book-1-id",
+        "GenreId": "genre-1-id"
+      },
+      {
+        "BookId": "book-1-id",
+        "GenreId": "genre-2-id"
+      }
+    ]
+  },
+  {
+    "Id": "book-1-id",
+    "Title": "Book Title 1",
+    "Description": "Description of Book 1",
+    "PublicationDate": "2022-01-01",
+    "Pages": 300,
+    "IsAvailable": true,
+    "AuthorId": "author-1-id",
+    "Author": {
+      "Id": "author-1-id",
+      "Name": "Author Name 1",
+      "Books": [] // (Lazy-loaded or explicitly loaded if needed)
+    },
+    "Genres": [
+      {
+        "BookId": "book-1-id",
+        "GenreId": "genre-1-id",
+        "Genre": {
+          "Id": "genre-1-id",
+          "Name": "Genre Name 1",
+          "Description": "Description of Genre 1"
+        }
+      },
+      {
+        "BookId": "book-1-id",
+        "GenreId": "genre-2-id",
+        "Genre": {
+          "Id": "genre-2-id",
+          "Name": "Genre Name 2",
+          "Description": "Description of Genre 2"
+        }
+      }
+    ]
+  }
+]

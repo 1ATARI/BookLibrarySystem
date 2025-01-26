@@ -1,15 +1,19 @@
 ﻿using BookLibrarySystem.Domain.Abstraction;
 using BookLibrarySystem.Domain.Users.Events;
 using Microsoft.AspNetCore.Identity;
-using System;
+using BookLibrarySystem.Domain.UsersBooks;
 
 namespace BookLibrarySystem.Domain.Users
 {
-    public sealed class User : IdentityUser<Guid>
+    public sealed class ApplicationUser : IdentityUser<Guid>, IIdentifiable
     {
         private readonly List<IDomainEvent> _domainEvents = new();
 
-        private User(Guid id, Name name, DateTime dateOfBirth)
+        public Name Name { get; private set; }
+        public DateTime DateOfBirth { get; private set; }
+        public ICollection<UserBook> BorrowedBooks { get; private set; } = new List<UserBook>();
+
+        private ApplicationUser(Guid id, Name name, DateTime dateOfBirth)
         {
             if (name == null) throw new ArgumentNullException(nameof(name));
             if (dateOfBirth == default) throw new ArgumentException("Invalid date of birth.", nameof(dateOfBirth));
@@ -19,17 +23,14 @@ namespace BookLibrarySystem.Domain.Users
             DateOfBirth = dateOfBirth;
         }
 
-        private User() { }
+        private ApplicationUser() { }
 
-        public Name Name { get; private set; }
-        public DateTime DateOfBirth { get; private set; }
-
-        public static User Create(Name name, DateTime dateOfBirth, string email, string username)
+        public static ApplicationUser Create(Name name, DateTime dateOfBirth, string email, string username)
         {
             if (string.IsNullOrWhiteSpace(email)) throw new ArgumentException("Email cannot be empty.", nameof(email));
             if (string.IsNullOrWhiteSpace(username)) throw new ArgumentException("Username cannot be empty.", nameof(username));
 
-            var user = new User(Guid.NewGuid(), name, dateOfBirth)
+            var user = new ApplicationUser(Guid.NewGuid(), name, dateOfBirth)
             {
                 Email = email,
                 UserName = username
@@ -43,10 +44,12 @@ namespace BookLibrarySystem.Domain.Users
         {
             Name = new Name(firstName, lastName);
         }
+
         public IReadOnlyList<IDomainEvent> GetDomainEvents() => _domainEvents.ToList();
 
         public void ClearDomainEvents() => _domainEvents.Clear();
 
         protected void RaiseDomainEvent(IDomainEvent domainEvent) => _domainEvents.Add(domainEvent);
+        public Guid Id { get; set; }
     }
 }

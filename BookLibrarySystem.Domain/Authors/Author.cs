@@ -11,7 +11,7 @@ public sealed class Author : Entity
         Books = new List<Book>();
     }
 
-    private Author() { } // For EF Core
+    private Author() { }
 
     public Name Name { get; private set; }
     public List<Book> Books { get; private set; }
@@ -23,11 +23,18 @@ public sealed class Author : Entity
     
     public Result AddBook(Book book)
     {
+        if (book == null) throw new ArgumentNullException(nameof(book));
+
         if (Books.Any(b => b.Id == book.Id))
         {
             return Result.Failure(AuthorErrors.BookAlreadyAssigned);
         }
+
         Books.Add(book);
         return Result.Success();
+    }
+    public void UpdateDetails(Name name)
+    {
+        Name = name;
     }
 }

@@ -22,7 +22,7 @@ public class DeleteBookGenreCommandHandler : ICommandHandler<DeleteBookGenreComm
         try
         {
             // Check if the BookGenre exists
-            var bookGenre = await _bookGenreRepository.GetByIdAsync(request.BookGenreId, cancellationToken);
+            var bookGenre = await _bookGenreRepository.GetByIdAsync(request.BookGenreId, "Book,Genre", cancellationToken);
             if (bookGenre == null)
             {
                 return Result.Failure(BookGenreErrors.NotFound);

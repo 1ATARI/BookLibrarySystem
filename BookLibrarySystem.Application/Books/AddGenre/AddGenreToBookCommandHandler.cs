@@ -24,15 +24,14 @@ namespace BookLibrarySystem.Application.Books.AddGenre
         {
             try
             {
-                // Validate book existence
-                var book = await _bookRepository.GetByIdAsync(request.BookId, cancellationToken);
+                var book = await _bookRepository.GetByIdAsync(request.BookId, "Genres", cancellationToken);
                 if (book == null)
                 {
                     return Result.Failure(BookErrors.NotFound);
                 }
 
                 // Validate genre existence
-                var genre = await _genreRepository.GetByIdAsync(request.GenreId , cancellationToken);
+                var genre = await _genreRepository.GetByIdAsync(request.GenreId ,null, cancellationToken);
                 if (genre == null)
                 {
                     return Result.Failure(GenreErrors.NotFound);

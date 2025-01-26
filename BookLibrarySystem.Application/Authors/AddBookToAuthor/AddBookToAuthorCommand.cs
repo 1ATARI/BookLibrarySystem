@@ -3,4 +3,4 @@ using BookLibrarySystem.Domain.Books;
 
 namespace BookLibrarySystem.Application.Authors.AddBookToAuthor;
 
-public sealed record AddBookToAuthorCommand(Guid AuthorId, Book Book) : ICommand;
+public sealed record AddBookToAuthorCommand(Guid AuthorId, AddBookDto BookDto) : ICommand;

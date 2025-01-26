@@ -4,4 +4,10 @@ using BookLibrarySystem.Domain.Users;
 
 namespace BookLibrarySystem.Application.Users.RegisterUser;
 
-public record RegisterUserCommand (string firstName, string lastName, DateTime dateOfBirth, string email, string username, string password):ICommand<Result<User>>;
+public sealed record RegisterUserCommand(
+    string FirstName,
+    string LastName,
+    DateTime DateOfBirth,
+    string Email,
+    string Username,
+    string Password) : ICommand<Result<ApplicationUser>>;

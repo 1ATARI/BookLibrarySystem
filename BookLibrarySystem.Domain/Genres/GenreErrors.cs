@@ -16,7 +16,7 @@ public static class GenreErrors
         "Genre.Duplicate",
         "The Genre for this Book already exists");
     public static Error NotFound = new(
-        "Genre.Found",
+        "Genre.NotFound",
         "The Genre Not Found");
     public static Error DeleteFailed = new(
         "Genre.DeleteFailed",

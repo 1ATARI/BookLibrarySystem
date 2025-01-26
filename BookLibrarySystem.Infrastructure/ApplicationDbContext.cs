@@ -1,20 +1,32 @@
 ﻿using BookLibrarySystem.Application.Exceptions;
 using BookLibrarySystem.Domain.Abstraction;
+using BookLibrarySystem.Domain.Authors;
+using BookLibrarySystem.Domain.Books;
+using BookLibrarySystem.Domain.Genres;
+using BookLibrarySystem.Domain.Users;
+using BookLibrarySystem.Domain.UsersBooks;
 using MediatR;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace BookLibrarySystem.Infrastructure;
 
 
-public sealed class ApplicationDbContext : DbContext, IUnitOfWork
+public class ApplicationDbContext : IdentityDbContext<ApplicationUser, IdentityRole<Guid>, Guid>, IUnitOfWork
+
 {
     private readonly IPublisher _publisher;
 
-    public ApplicationDbContext(DbContextOptions options, IPublisher publisher)
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, IPublisher publisher)
         : base(options)
     {
         _publisher = publisher;
     }
+    public DbSet<Book> Books { get; set; }
+    public DbSet<Author> Authors { get; set; }
+    public DbSet<Genre> Genres { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

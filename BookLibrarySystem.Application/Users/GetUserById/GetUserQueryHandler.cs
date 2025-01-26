@@ -7,19 +7,19 @@ namespace BookLibrarySystem.Application.Users.GetUserById;
 
 internal sealed class GetUserQueryHandler : IQueryHandler<GetUserByIdQuery, UserResponse>
 {
-    private readonly IUserRepository _userRepository;
+    private readonly IApplicationUserRepository _applicationUserRepository;
 
-    public GetUserQueryHandler(IUserRepository userRepository)
+    public GetUserQueryHandler(IApplicationUserRepository applicationUserRepository)
     {
-        _userRepository = userRepository;
+        _applicationUserRepository = applicationUserRepository;
     }
 
     public async Task<Result<UserResponse>> Handle(GetUserByIdQuery request, CancellationToken cancellationToken)
     {
-        var user = await _userRepository.GetByIdAsync(request.UserId, cancellationToken);
+        var user = await _applicationUserRepository.GetByIdAsync(request.UserId,"BorrowedBooks,BorrowedBooks.Book" ,cancellationToken);
         if (user == null)
         {
-            return Result.Failure<UserResponse>(UserErrors.NotFound);
+            return Result.Failure<UserResponse>(ApplicationUserErrors.NotFound);
         }
 
         var response = new UserResponse

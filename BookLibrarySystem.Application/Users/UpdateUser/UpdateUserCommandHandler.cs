@@ -7,24 +7,24 @@ namespace BookLibrarySystem.Application.Users.UpdateUser;
 
 internal sealed class UpdateUserCommandHandler : ICommandHandler<UpdateUserCommand, Result>
 {
-    private readonly IUserRepository _userRepository;
-    private readonly UserManager<User> _userManager;
+    private readonly IApplicationUserRepository _applicationUserRepository;
+    private readonly UserManager<ApplicationUser> _userManager;
     private readonly IUnitOfWork _unitOfWork;
 
-    public UpdateUserCommandHandler(IUserRepository userRepository, UserManager<User> userManager,
+    public UpdateUserCommandHandler(IApplicationUserRepository applicationUserRepository, UserManager<ApplicationUser> userManager,
         IUnitOfWork unitOfWork)
     {
-        _userRepository = userRepository;
+        _applicationUserRepository = applicationUserRepository;
         _userManager = userManager;
         _unitOfWork = unitOfWork;
     }
 
     public async Task<Result<Result>> Handle(UpdateUserCommand request, CancellationToken cancellationToken)
     {
-        var user = await _userRepository.GetByIdAsync(request.UserId , cancellationToken);
+        var user = await _applicationUserRepository.GetByIdAsync(request.UserId ,null, cancellationToken);
         if (user == null)
         {
-            return Result.Failure(UserErrors.NotFound);
+            return Result.Failure(ApplicationUserErrors.NotFound);
         }
 
         if (!string.IsNullOrWhiteSpace(request.FirstName) || !string.IsNullOrWhiteSpace(request.LastName))

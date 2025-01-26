@@ -1,6 +1,6 @@
 ﻿namespace BookLibrarySystem.Domain.Abstraction;
 
-public abstract class Entity
+public abstract class Entity : IIdentifiable
 {
     private readonly List<IDomainEvent> _domainEvents = new();
     protected Entity(Guid id)
@@ -12,7 +12,7 @@ public abstract class Entity
     {
         
     }
-    public Guid Id { get; init; }
+    public Guid Id { get; set; }
     /// <summary>
     ///    retrieves the list of domain events raised by this entity
     /// </summary>

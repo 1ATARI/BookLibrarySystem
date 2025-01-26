@@ -6,23 +6,20 @@ namespace BookLibrarySystem.Application;
 
 public static class DependencyInjection
 {
-    
-
-public static IServiceCollection AddApplication(this IServiceCollection services)
-{
-    services.AddMediatR(configuration =>
+    public static IServiceCollection AddApplication(this IServiceCollection services)
     {
-        configuration.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly);
+        services.AddMediatR(configuration =>
+        {
+            configuration.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly);
 
-        configuration.AddOpenBehavior(typeof(LoggingBehavior<,>));
+            configuration.AddOpenBehavior(typeof(LoggingBehavior<,>));
 
-        configuration.AddOpenBehavior(typeof(ValidationBehavior<,>));
-    });
+            configuration.AddOpenBehavior(typeof(ValidationBehavior<,>));
+        });
 
-    services.AddValidatorsFromAssembly(typeof(DependencyInjection).Assembly);
+        services.AddValidatorsFromAssembly(typeof(DependencyInjection).Assembly);
 
 
-    return services;
-}
-    
+        return services;
+    }
 }

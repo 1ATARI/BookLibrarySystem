@@ -15,7 +15,7 @@ internal sealed class GetUserBookByIdQueryHandler : IQueryHandler<GetUserBookByI
 
     public async Task<Result<UserBook>> Handle(GetUserBookByIdQuery request, CancellationToken cancellationToken)
     {
-        var userBook = await _userBookRepository.GetByIdAsync(request.UserBookId, cancellationToken);
+        var userBook = await _userBookRepository.GetByIdAsync(request.UserBookId ,"Book,User", cancellationToken);
         return userBook == null
             ? Result.Failure<UserBook>(UserBookErrors.UserBookNotFound)
             : userBook;

@@ -1,4 +1,5 @@
 ﻿using BookLibrarySystem.Domain.Abstraction;
+using BookLibrarySystem.Domain.Authors;
 using BookLibrarySystem.Domain.Books.Events;
 using BookLibrarySystem.Domain.BooksGenres;
 using BookLibrarySystem.Domain.Genres;
@@ -40,6 +41,7 @@ namespace BookLibrarySystem.Domain.Books
         public int Pages { get; private set; }
         public bool IsAvailable { get; private set; }
         public Guid AuthorId { get; private set; }
+        public Author Author { get; private set; }
         public ICollection<BookGenre> Genres { get; private set; }
 
         public static Book Create(Title title, Description description, DateTime publicationDate, int pages, Guid authorId)
@@ -61,7 +63,9 @@ namespace BookLibrarySystem.Domain.Books
         {
             if (title == null) throw new ArgumentNullException(nameof(title));
             if (description == null) throw new ArgumentNullException(nameof(description));
-            if (authorId == Guid.Empty) throw new ArgumentException("Author ID must not be empty.", nameof(authorId));
+            if (publicationDate == default) throw new ArgumentException("Invalid publication date.", nameof(publicationDate)); 
+            if (pages <= 0) throw new ArgumentOutOfRangeException(nameof(pages), "Pages must be greater than zero."); 
+            if (authorId == Guid.Empty) throw new ArgumentException("Author ID must not be empty.", nameof(authorId)); 
 
             Title = title;
             Description = description;
@@ -104,6 +108,16 @@ namespace BookLibrarySystem.Domain.Books
 
             Genres.Add(new BookGenre(Id, genre.Id));
             return Result.Success();
+        }
+        public void RemoveGenre(Genre genre)
+        {
+            if (genre == null) throw new ArgumentNullException(nameof(genre));
+
+            var bookGenre = Genres.FirstOrDefault(bg => bg.GenreId == genre.Id);
+            if (bookGenre != null)
+            {
+                Genres.Remove(bookGenre);
+            }
         }
 
     }
