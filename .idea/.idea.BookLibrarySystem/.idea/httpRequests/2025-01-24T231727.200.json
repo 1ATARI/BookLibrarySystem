@@ -1,0 +1,12 @@
+[
+  {
+    "id": "1887ce6e-f522-4456-8b85-aca25ce85b43",
+    "name": "Fiction",
+    "description": "A literary genre that includes narrative works that are created from the imagination."
+  },
+  {
+    "id": "de517fb4-9bb0-4d76-9741-ea251e1a8221",
+    "name": "Action",
+    "description": "This is Action Genre"
+  }
+]

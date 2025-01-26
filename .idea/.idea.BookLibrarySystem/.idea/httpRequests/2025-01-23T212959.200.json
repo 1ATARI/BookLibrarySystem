@@ -1,0 +1,31 @@
+[
+  {
+    "id": "690b4fee-25b2-4fa7-9e37-77ae9f2504e9",
+    "firstName": "John",
+    "lastName": "Doe",
+    "books": []
+  },
+  {
+    "id": "cfdd0081-394c-435c-992a-f64527fb0eb4",
+    "firstName": "youssef",
+    "lastName": "mohamed",
+    "books": [
+      {
+        "id": "5fee316c-9902-4e64-ba93-4336bb76cf64",
+        "title": "test boook",
+        "description": "Desc1",
+        "publicationDate": "2025-01-22T00:00:00",
+        "pages": 200,
+        "isAvailable": true
+      },
+      {
+        "id": "8ca2deb3-72ed-436b-97cc-7c76d43fe97f",
+        "title": "0",
+        "description": "Desc1",
+        "publicationDate": "2025-01-22T00:00:00",
+        "pages": 200,
+        "isAvailable": true
+      }
+    ]
+  }
+]

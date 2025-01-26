@@ -1,0 +1,37 @@
+{
+  "$id": "1",
+  "title": {
+    "$id": "2",
+    "value": "test boook"
+  },
+  "description": {
+    "$id": "3",
+    "value": "Desc1"
+  },
+  "publicationDate": "2025-01-22T00:00:00",
+  "pages": 200,
+  "isAvailable": true,
+  "authorId": "cfdd0081-394c-435c-992a-f64527fb0eb4",
+  "author": {
+    "$id": "4",
+    "name": {
+      "$id": "5",
+      "firstName": "youssef",
+      "lastName": "mohamed"
+    },
+    "books": {
+      "$id": "6",
+      "$values": [
+        {
+          "$ref": "1"
+        }
+      ]
+    },
+    "id": "cfdd0081-394c-435c-992a-f64527fb0eb4"
+  },
+  "genres": {
+    "$id": "7",
+    "$values": []
+  },
+  "id": "5fee316c-9902-4e64-ba93-4336bb76cf64"
+}

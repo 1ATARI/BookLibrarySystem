@@ -1,0 +1,13 @@
+E:\project\New folder\BookLibrarySystem\BookLibrarySystem.Domain\bin\Debug\net9.0\BookLibrarySystem.Domain.deps.json
+E:\project\New folder\BookLibrarySystem\BookLibrarySystem.Domain\bin\Debug\net9.0\BookLibrarySystem.Domain.dll
+E:\project\New folder\BookLibrarySystem\BookLibrarySystem.Domain\bin\Debug\net9.0\BookLibrarySystem.Domain.pdb
+E:\project\New folder\BookLibrarySystem\BookLibrarySystem.Domain\obj\Debug\net9.0\BookLibrarySystem.Domain.csproj.AssemblyReference.cache
+E:\project\New folder\BookLibrarySystem\BookLibrarySystem.Domain\obj\Debug\net9.0\BookLibrarySystem.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\project\New folder\BookLibrarySystem\BookLibrarySystem.Domain\obj\Debug\net9.0\BookLibrarySystem.Domain.AssemblyInfoInputs.cache
+E:\project\New folder\BookLibrarySystem\BookLibrarySystem.Domain\obj\Debug\net9.0\BookLibrarySystem.Domain.AssemblyInfo.cs
+E:\project\New folder\BookLibrarySystem\BookLibrarySystem.Domain\obj\Debug\net9.0\BookLibrarySystem.Domain.csproj.CoreCompileInputs.cache
+E:\project\New folder\BookLibrarySystem\BookLibrarySystem.Domain\obj\Debug\net9.0\BookLibrarySystem.Domain.sourcelink.json
+E:\project\New folder\BookLibrarySystem\BookLibrarySystem.Domain\obj\Debug\net9.0\BookLibrarySystem.Domain.dll
+E:\project\New folder\BookLibrarySystem\BookLibrarySystem.Domain\obj\Debug\net9.0\refint\BookLibrarySystem.Domain.dll
+E:\project\New folder\BookLibrarySystem\BookLibrarySystem.Domain\obj\Debug\net9.0\BookLibrarySystem.Domain.pdb
+E:\project\New folder\BookLibrarySystem\BookLibrarySystem.Domain\obj\Debug\net9.0\ref\BookLibrarySystem.Domain.dll

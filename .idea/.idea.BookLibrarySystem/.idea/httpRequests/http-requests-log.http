@@ -1,0 +1,897 @@
+PUT http://localhost:5057/api/Book/00a0aab2-6b79-4ee2-815d-11b7ce0b211f
+Content-Type: application/json
+Content-Length: 297
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "testtttt",
+  "description": "b",
+  "publicationDate": "2025-01-25T23:05:35.569Z",
+  "pages": 50,
+  "authorId": "67880da1-1dfa-4300-8549-0d88ad03064e",
+  "isAvailable": true,
+  "genreIds": [
+    "71336c96-a276-462e-b76c-cc87947bc7ca",
+    "196214284-3aea-4d06-aca2-c3c525e32da8"
+  ]
+}
+
+<> 2025-01-26T042036.400.json
+
+###
+
+PUT http://localhost:5057/api/Book/00a0aab2-6b79-4ee2-815d-11b7ce0b211f
+Content-Type: application/json
+Content-Length: 296
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "testtttt",
+  "description": "b",
+  "publicationDate": "2025-01-25T23:05:35.569Z",
+  "pages": 50,
+  "authorId": "67880da1-1dfa-4300-8549-0d88ad03064e",
+  "isAvailable": true,
+  "genreIds": [
+    "71336c96-a276-462e-b76c-cc87947bc7ca",
+    "00000000-0000-0000-0000-000000000000"
+  ]
+}
+
+<> 2025-01-26T042024.400.json
+
+###
+
+PUT http://localhost:5057/api/Book/00a0aab2-6b79-4ee2-815d-11b7ce0b211f
+Content-Type: application/json
+Content-Length: 296
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "testtttt",
+  "description": "b",
+  "publicationDate": "2025-01-25T23:05:35.569Z",
+  "pages": 50,
+  "authorId": "67880da1-1dfa-4300-8549-0d88ad03064e",
+  "isAvailable": true,
+  "genreIds": [
+    "71336c96-a276-462e-b76c-cc87947bc7ca",
+    "96214284-3aea-4d06-aca2-c3c525e32da8"
+  ]
+}
+
+###
+
+PUT http://localhost:5057/api/Book/00a0aab2-6b79-4ee2-815d-11b7ce0b211f
+Content-Type: application/json
+Content-Length: 297
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "testtttt",
+  "description": "b",
+  "publicationDate": "2025-01-25T23:05:35.569Z",
+  "pages": 50,
+  "authorId": "67880da1-1dfa-4300-8549-0d88ad03064e",
+  "isAvailable": true,
+  "genreIds": [
+    "171336c96-a276-462e-b76c-cc87947bc7ca",
+    "96214284-3aea-4d06-aca2-c3c525e32da8"
+  ]
+}
+
+<> 2025-01-26T041710.400.json
+
+###
+
+PUT http://localhost:5057/api/Book/00a0aab2-6b79-4ee2-815d-11b7ce0b211f
+Content-Type: application/json
+Content-Length: 296
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "testtttt",
+  "description": "b",
+  "publicationDate": "2025-01-25T23:05:35.569Z",
+  "pages": 50,
+  "authorId": "67880da1-1dfa-4300-8549-0d88ad03064e",
+  "isAvailable": true,
+  "genreIds": [
+    "71336c96-a276-462e-b76c-cc87947bc7ca",
+    "96214284-3aea-4d06-aca2-c3c525e32da8"
+  ]
+}
+
+###
+
+PUT http://localhost:5057/api/Book/00a0aab2-6b79-4ee2-815d-11b7ce0b211f
+Content-Type: application/json
+Content-Length: 296
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "testtttt",
+  "description": "b",
+  "publicationDate": "2025-01-25T23:05:35.569Z",
+  "pages": 50,
+  "authorId": "67880da1-1dfa-4300-8549-0d88ad03064e",
+  "isAvailable": true,
+  "genreIds": [
+    "71336c96-a276-462e-b76c-cc87947bc7ca",
+    "96214284-3aea-4d06-aca2-c3c525e32da8"
+  ]
+}
+
+###
+
+PUT http://localhost:5057/api/Book/00a0aab2-6b79-4ee2-815d-11b7ce0b211f
+Content-Type: application/json
+Content-Length: 296
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "testtttt",
+  "description": "b",
+  "publicationDate": "2025-01-25T23:05:35.569Z",
+  "pages": 50,
+  "authorId": "67880da1-1dfa-4300-8549-0d88ad03064e",
+  "isAvailable": true,
+  "genreIds": [
+    "71336c96-a276-462e-b76c-cc87947bc7ca",
+    "96214284-3aea-4d06-aca2-c3c525e32da8"
+  ]
+}
+
+<> 2025-01-26T035940.400.json
+
+###
+
+PUT http://localhost:5057/api/Book/00a0aab2-6b79-4ee2-815d-11b7ce0b211f
+Content-Type: application/json
+Content-Length: 296
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "testtttt",
+  "description": "b",
+  "publicationDate": "2025-01-25T23:05:35.569Z",
+  "pages": 50,
+  "authorId": "67880da1-1dfa-4300-8549-0d88ad03064e",
+  "isAvailable": true,
+  "genreIds": [
+    "71336c96-a276-462e-b76c-cc87947bc7ca",
+    "96214284-3aea-4d06-aca2-c3c525e32da8"
+  ]
+}
+
+<> 2025-01-26T034138.400.json
+
+###
+
+PUT http://localhost:5057/api/Book/00a0aab2-6b79-4ee2-815d-11b7ce0b211f
+Content-Type: application/json
+Content-Length: 296
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "testtttt",
+  "description": "b",
+  "publicationDate": "2025-01-25T23:05:35.569Z",
+  "pages": 50,
+  "authorId": "67880da1-1dfa-4300-8549-0d88ad03064e",
+  "isAvailable": true,
+  "genreIds": [
+    "71336c96-a276-462e-b76c-cc87947bc7ca",
+    "96214284-3aea-4d06-aca2-c3c525e32da8"
+  ]
+}
+
+<> 2025-01-26T033840.400.json
+
+###
+
+PUT http://localhost:5057/api/Book/00a0aab2-6b79-4ee2-815d-11b7ce0b211f
+Content-Type: application/json
+Content-Length: 296
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "testtttt",
+  "description": "b",
+  "publicationDate": "2025-01-25T23:05:35.569Z",
+  "pages": 50,
+  "authorId": "67880da1-1dfa-4300-8549-0d88ad03064e",
+  "isAvailable": true,
+  "genreIds": [
+    "71336c96-a276-462e-b76c-cc87947bc7ca",
+    "96214284-3aea-4d06-aca2-c3c525e32da8"
+  ]
+}
+
+<> 2025-01-26T033410.400.json
+
+###
+
+PUT http://localhost:5057/api/Book/00a0aab2-6b79-4ee2-815d-11b7ce0b211f
+Content-Type: application/json
+Content-Length: 296
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "testtttt",
+  "description": "b",
+  "publicationDate": "2025-01-25T23:05:35.569Z",
+  "pages": 50,
+  "authorId": "67880da1-1dfa-4300-8549-0d88ad03064e",
+  "isAvailable": true,
+  "genreIds": [
+    "71336c96-a276-462e-b76c-cc87947bc7ca",
+    "96214284-3aea-4d06-aca2-c3c525e32da8"
+  ]
+}
+
+<> 2025-01-26T033155.400.json
+
+###
+
+PUT http://localhost:5057/api/Book/00a0aab2-6b79-4ee2-815d-11b7ce0b211f
+Content-Type: application/json
+Content-Length: 273
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+
+    "title": "testtttt",
+    "description": "b",
+    "publicationDate": "2025-01-25T23:05:35.569Z",
+    "pages": 50,
+    "authorId": "67880da1-1dfa-4300-8549-0d88ad03064e",
+    "isAvailable": true,
+    "genreIds": [
+      "71336c96-a276-462e-b76c-cc87947bc7ca"
+    ]
+  }
+
+###
+
+PUT http://localhost:5057/api/Book/00a0aab2-6b79-4ee2-815d-11b7ce0b211f
+Content-Type: application/json
+Content-Length: 273
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+
+    "title": "testtttt",
+    "description": "b",
+    "publicationDate": "2025-01-25T23:05:35.569Z",
+    "pages": 50,
+    "authorId": "67880da1-1dfa-4300-8549-0d88ad03064e",
+    "isAvailable": true,
+    "genreIds": [
+      "96214284-3AEA-4D06-ACA2-C3C525E32DA8"
+    ]
+  }
+
+<> 2025-01-26T033015.400.json
+
+###
+
+PUT http://localhost:5057/api/Book/00a0aab2-6b79-4ee2-815d-11b7ce0b211f
+Content-Type: application/json
+Content-Length: 273
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+
+    "title": "testtttt",
+    "description": "b",
+    "publicationDate": "2025-01-25T23:05:35.569Z",
+    "pages": 50,
+    "authorId": "67880da1-1dfa-4300-8549-0d88ad03064e",
+    "isAvailable": true,
+    "genreIds": [
+      "71336c96-a276-462e-b76c-cc87947bc7ca"
+    ]
+  }
+
+###
+
+PUT http://localhost:5057/api/Book/00a0aab2-6b79-4ee2-815d-11b7ce0b211f
+Content-Type: application/json
+Content-Length: 319
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+
+    "title": "testtttt",
+    "description": "b",
+    "publicationDate": "2025-01-25T23:05:35.569Z",
+    "pages": 50,
+    "authorId": "67880da1-1dfa-4300-8549-0d88ad03064e",
+    "isAvailable": true,
+    "genreIds": [
+      "71336c96-a276-462e-b76c-cc87947bc7ca",
+      "96214284-3AEA-4D06-ACA2-C3C525E32DA8"
+    ]
+  }
+
+<> 2025-01-26T032955.400.json
+
+###
+
+PUT http://localhost:5057/api/Book/00a0aab2-6b79-4ee2-815d-11b7ce0b211f
+Content-Type: application/json
+Content-Length: 273
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+
+    "title": "testtttt",
+    "description": "b",
+    "publicationDate": "2025-01-25T23:05:35.569Z",
+    "pages": 50,
+    "authorId": "67880da1-1dfa-4300-8549-0d88ad03064e",
+    "isAvailable": true,
+    "genreIds": [
+      "71336c96-a276-462e-b76c-cc87947bc7ca"
+    ]
+  }
+
+###
+
+PUT http://localhost:5057/api/Book/00a0aab2-6b79-4ee2-815d-11b7ce0b211f
+Content-Type: application/json
+Content-Length: 272
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+
+    "title": "updated",
+    "description": "b",
+    "publicationDate": "2025-01-25T23:05:35.569Z",
+    "pages": 50,
+    "authorId": "67880da1-1dfa-4300-8549-0d88ad03064e",
+    "isAvailable": true,
+    "genreIds": [
+      "71336c96-a276-462e-b76c-cc87947bc7ca"
+    ]
+  }
+
+<> 2025-01-26T013813.500.txt
+
+###
+
+PUT http://localhost:5057/api/Book/00a0aab2-6b79-4ee2-815d-11b7ce0b211f
+Content-Type: application/json
+Content-Length: 272
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+
+    "title": "updated",
+    "description": "b",
+    "publicationDate": "2025-01-25T23:05:35.569Z",
+    "pages": 50,
+    "authorId": "67880da1-1dfa-4300-8549-0d88ad03064e",
+    "isAvailable": true,
+    "genreIds": [
+      "71336c96-a276-462e-b76c-cc87947bc7ca"
+    ]
+  }
+
+<> 2025-01-26T013449.400.json
+
+###
+
+PUT http://localhost:5057/api/Book/00a0aab2-6b79-4ee2-815d-11b7ce0b211f
+Content-Type: application/json
+Content-Length: 272
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+
+    "title": "updated",
+    "description": "b",
+    "publicationDate": "2025-01-25T23:05:35.569Z",
+    "pages": 50,
+    "authorId": "67880da1-1dfa-4300-8549-0d88ad03064e",
+    "isAvailable": true,
+    "genreIds": [
+      "71336c96-a276-462e-b76c-cc87947bc7ca"
+    ]
+  }
+
+<> 2025-01-26T012822.400.json
+
+###
+
+PUT http://localhost:5057/api/Book/00a0aab2-6b79-4ee2-815d-11b7ce0b211f
+Content-Type: application/json
+Content-Length: 288
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "bookDto": {
+    "title": "updated",
+    "description": "b",
+    "publicationDate": "2025-01-25T23:05:35.569Z",
+    "pages": 50,
+    "authorId": "67880da1-1dfa-4300-8549-0d88ad03064e",
+    "isAvailable": true,
+    "genreIds": [
+      "71336c96-a276-462e-b76c-cc87947bc7ca"
+    ]
+  }
+}
+
+<> 2025-01-26T012802.400.json
+
+###
+
+PUT http://localhost:5057/api/Book/5fee316c-9902-4e64-ba93-4336bb76cf64
+Content-Type: application/json
+Content-Length: 295
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "Updated Book Title",
+  "description":  "Updated description of the book.",
+  "publicationDate": "2025-01-24T22:51:01.947Z",
+  "pages": 500,
+  "authorId": "690b4fee-25b2-4fa7-9e37-77ae9f2504e9",
+  "isAvailable": true,
+  "genreIds": [
+    "1887ce6e-f522-4456-8b85-aca25ce85b43"
+  ]
+}
+
+<> 2025-01-25T010824.400.json
+
+###
+
+PUT http://localhost:5057/api/Book/5fee316c-9902-4e64-ba93-4336bb76cf64
+Content-Type: application/json
+Content-Length: 295
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "Updated Book Title",
+  "description":  "Updated description of the book.",
+  "publicationDate": "2025-01-24T22:51:01.947Z",
+  "pages": 500,
+  "authorId": "690b4fee-25b2-4fa7-9e37-77ae9f2504e9",
+  "isAvailable": true,
+  "genreIds": [
+    "1887ce6e-f522-4456-8b85-aca25ce85b43"
+  ]
+}
+
+<> 2025-01-25T010739.400.json
+
+###
+
+PUT http://localhost:5057/api/Book/5fee316c-9902-4e64-ba93-4336bb76cf64
+Content-Type: application/json
+Content-Length: 295
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "Updated Book Title",
+  "description":  "Updated description of the book.",
+  "publicationDate": "2025-01-24T22:51:01.947Z",
+  "pages": 500,
+  "authorId": "690b4fee-25b2-4fa7-9e37-77ae9f2504e9",
+  "isAvailable": true,
+  "genreIds": [
+    "1887ce6e-f522-4456-8b85-aca25ce85b43"
+  ]
+}
+
+<> 2025-01-25T010137.400.json
+
+###
+
+PUT http://localhost:5057/api/Book/5fee316c-9902-4e64-ba93-4336bb76cf64
+Content-Type: application/json
+Content-Length: 295
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "Updated Book Title",
+  "description":  "Updated description of the book.",
+  "publicationDate": "2025-01-24T22:51:01.947Z",
+  "pages": 500,
+  "authorId": "690b4fee-25b2-4fa7-9e37-77ae9f2504e9",
+  "isAvailable": true,
+  "genreIds": [
+    "1887ce6e-f522-4456-8b85-aca25ce85b43"
+  ]
+}
+
+<> 2025-01-25T010035.400.json
+
+###
+
+PUT http://localhost:5057/api/Book/5fee316c-9902-4e64-ba93-4336bb76cf64
+Content-Type: application/json
+Content-Length: 295
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "Updated Book Title",
+  "description":  "Updated description of the book.",
+  "publicationDate": "2025-01-24T22:51:01.947Z",
+  "pages": 500,
+  "authorId": "690b4fee-25b2-4fa7-9e37-77ae9f2504e9",
+  "isAvailable": true,
+  "genreIds": [
+    "1887ce6e-f522-4456-8b85-aca25ce85b43"
+  ]
+}
+
+<> 2025-01-25T005820.400.json
+
+###
+
+PUT http://localhost:5057/api/Book/5fee316c-9902-4e64-ba93-4336bb76cf64
+Content-Type: application/json
+Content-Length: 339
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "Title": "Updated Book Title",
+  "Description": "Updated description of the book.",
+  "PublicationDate": "2025-01-25T00:00:00Z",
+  "Pages": 350,
+  "AuthorId": "d94f40be-6d7b-4295-9b83-47914d7c3bde", 
+  "IsAvailable": true,
+  "GenreIds": [
+    "9cfb91ff-2d0e-437d-bff9-8e890648cbbf",  
+    "ec9189d0-4518-4fe9-baf2-7f7fe58b0f67"
+  ]
+  }
+
+<> 2025-01-25T005758.500.txt
+
+###
+
+PUT http://localhost:5057/api/Book/5fee316c-9902-4e64-ba93-4336bb76cf64
+Content-Type: application/json
+Content-Length: 339
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "Title": "Updated Book Title",
+  "Description": "Updated description of the book.",
+  "PublicationDate": "2025-01-25T00:00:00Z",
+  "Pages": 350,
+  "AuthorId": "d94f40be-6d7b-4295-9b83-47914d7c3bde", 
+  "IsAvailable": true,
+  "GenreIds": [
+    "9cfb91ff-2d0e-437d-bff9-8e890648cbbf",  
+    "ec9189d0-4518-4fe9-baf2-7f7fe58b0f67"
+  ]
+  }
+
+<> 2025-01-25T004341.500.txt
+
+###
+
+GET http://localhost:5057/api/Book/5fee316c-9902-4e64-ba93-4336bb76cf64
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-01-25T004305.200.json
+
+###
+
+POST http://localhost:5057/api/Book
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-01-25T004227.415.json
+
+###
+
+GET http://localhost:5057/api/Genre/34d247d1-7645-4eec-9f10-6bb9332e1e34
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-01-24T231739.404.json
+
+###
+
+GET http://localhost:5057/api/Genre
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-01-24T231727.200.json
+
+###
+
+POST http://localhost:5057/api/Genre
+Content-Type: application/json
+Content-Length: 129
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "Name": "Fiction",
+  "Description": "A literary genre that includes narrative works that are created from the imagination."
+}
+
+<> 2025-01-24T231716.200.json
+
+###
+
+GET http://localhost:5057/api/Genre
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-01-24T231432.200.json
+
+###
+
+DELETE http://localhost:5057/api/Genre/34d247d1-7645-4eec-9f10-6bb9332e1e34
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+###
+
+POST http://localhost:5057/api/Genre/34d247d1-7645-4eec-9f10-6bb9332e1e34
+Content-Type: application/json
+Content-Length: 131
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "Name": "Fiction1",
+  "Description": "1A literary genre that includes narrative works that are created from the imagination."
+}
+
+<> 2025-01-24T230639.200.json
+
+###
+
+GET http://localhost:5057/api/Genre/34d247d1-7645-4eec-9f10-6bb9332e1e34
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-01-24T230611.200.json
+
+###
+
+POST http://localhost:5057/api/Genre
+Content-Type: application/json
+Content-Length: 129
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "Name": "Fiction",
+  "Description": "A literary genre that includes narrative works that are created from the imagination."
+}
+
+<> 2025-01-24T230417.200.json
+
+###
+
+POST http://localhost:5057/api/Genre
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-01-24T230127.415.json
+
+###
+
+GET http://localhost:5057/api/Genre/de517fb4-9bb0-4d76-9741-ea251e1a8221
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-01-24T210625.404.json
+
+###
+
+GET http://localhost:5057/api/Book/5fee316c-9902-4e64-ba93-4336bb76cf64
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-01-23T232335.200.json
+
+###
+
+GET http://localhost:5057/api/Book/5fee316c-9902-4e64-ba93-4336bb76cf64
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-01-23T231934.500.txt
+
+###
+
+GET http://localhost:5057/api/Book
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-01-23T230106.200.json
+
+###
+
+GET http://localhost:5057/api/Book
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-01-23T224303.500.txt
+
+###
+
+GET http://localhost:5057/api/authors?pageNumber=1&pageSize=2
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-01-23T212959.200.json
+
+###
+
+GET http://localhost:5057/api/authors?pageNumber=1&pageSize=1
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-01-23T212952.200.json
+
+###
+
+POST http://localhost:5057/api/authors
+Content-Type: application/json
+Content-Length: 46
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "firstname": "John",
+  "lastname": "Doe"
+}
+
+<> 2025-01-23T212945.200.json
+
+###
+
+GET http://localhost:5057/api/authors?pageNumber=1&pageSize=1
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-01-23T212842.200.json
+
+###
+
+GET http://localhost:5057/api/authors?pageNumber=1&pageSize=1
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-01-23T205451.500.txt
+
+###
+
+POST http://localhost:5057/api/authors/cfdd0081-394c-435c-992a-f64527fb0eb4/books
+Content-Type: application/json; charset=utf-8
+Content-Length: 113
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "Title": "test boook",
+  "Description": "Desc1",
+  "PublicationDate": "2025-01-22T00:00:00",
+  "Pages": 200
+}
+
+###
+
+POST http://localhost:5057/api/authors/cfdd0081-394c-435c-992a-f64527fb0eb4/books
+Content-Type: application/json; charset=utf-8
+Content-Length: 104
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "Title": "0",
+  "Description": "Desc1",
+  "PublicationDate": "2025-01-22T00:00:00",
+  "Pages": 200
+}
+
+###
+
