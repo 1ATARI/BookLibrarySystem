@@ -44,7 +44,27 @@ namespace BookLibrarySystem.Domain.Users
         {
             Name = new Name(firstName, lastName);
         }
+        public void Update(string firstName, string lastName, string email, string username, string phoneNumber)
+        {
+            UpdateName(firstName, lastName);
 
+            if (!string.IsNullOrWhiteSpace(email) && Email != email)
+            {
+                Email = email;
+            }
+
+            if (!string.IsNullOrWhiteSpace(username) && UserName != username)
+            {
+                UserName = username;
+            }
+
+            if (!string.IsNullOrWhiteSpace(phoneNumber) && PhoneNumber != phoneNumber)
+            {
+                PhoneNumber = phoneNumber;
+            }
+
+            RaiseDomainEvent(new UserUpdatedDomainEvent(Id));
+        }
         public IReadOnlyList<IDomainEvent> GetDomainEvents() => _domainEvents.ToList();
 
         public void ClearDomainEvents() => _domainEvents.Clear();

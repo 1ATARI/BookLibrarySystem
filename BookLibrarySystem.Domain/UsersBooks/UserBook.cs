@@ -27,9 +27,10 @@ namespace BookLibrarySystem.Domain.UsersBooks
             ReturnedDate = returnedDate;
         }
 
-        private UserBook() { } // For EF Core
+        private UserBook() { } 
 
         public Guid UserId { get; private set; }
+
         public ApplicationUser ApplicationUser { get; private set; }
 
         public Guid BookId { get; private set; }

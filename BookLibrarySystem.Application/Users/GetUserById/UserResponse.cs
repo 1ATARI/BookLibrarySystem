@@ -1,10 +1,3 @@
-﻿namespace BookLibrarySystem.Application.Users.GetUser;
+﻿namespace BookLibrarySystem.Application.Users.GetUserById;
 
-public sealed class UserResponse
-{
-    public Guid Id { get; set; }
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public string Email { get; set; }
-    public string Username { get; set; }
-}
+public record UserResponse(Guid Id, string FirstName, string LastName, string Email, string Username);

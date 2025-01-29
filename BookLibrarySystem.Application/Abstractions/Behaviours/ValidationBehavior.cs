@@ -32,12 +32,11 @@ public class ValidationBehavior<TRequest, TResponse>
         RequestHandlerDelegate<TResponse> next,
         CancellationToken cancellationToken)
     {
-        //validate the request obect
         if (!_validators.Any())
         {
             return await next();
         }
-            
+
         var context = new ValidationContext<TRequest>(request);
 
         var validationErrors = _validators
@@ -47,7 +46,6 @@ public class ValidationBehavior<TRequest, TResponse>
             .Select(validationFailure => new ValidationError(
                 validationFailure.PropertyName,
                 validationFailure.ErrorMessage))
-            .Distinct()
             .ToList();
 
         if (validationErrors.Any())

@@ -16,8 +16,14 @@ internal sealed class GetAllUsersQueryHandler : IQueryHandler<GetAllUsersQuery, 
 
     public async Task<Result<IEnumerable<ApplicationUser>>> Handle(GetAllUsersQuery request, CancellationToken cancellationToken)
     {
+        int skip = (request.PageNumber - 1) * request.PageSize;
 
-        var users = await _applicationUserRepository.GetAllAsync(cancellationToken: cancellationToken);
+        var users = await _applicationUserRepository.GetAllAsync(
+            skip: skip,
+            take: request.PageSize,
+            
+            cancellationToken: cancellationToken);
+
         
         return Result.Success(users);
     }

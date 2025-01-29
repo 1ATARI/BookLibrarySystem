@@ -1,16 +1,17 @@
 using BookLibrarySystem.Application.Books.CreateBooks;
-using BookLibrarySystem.Application.Books.Dto;
+using BookLibrarySystem.Application.Books.DeleteBook;
 using BookLibrarySystem.Application.Books.GetAllBooks;
 using BookLibrarySystem.Application.Books.GetBookById;
 using BookLibrarySystem.Application.Books.UpdateBook;
-// using BookLibrarySystem.Application.Books.UpdateBook;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookLibrarySystem.Api.Controllers;
     
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class BookController : ControllerBase
     {
         private readonly ISender _sender;
@@ -74,11 +75,33 @@ namespace BookLibrarySystem.Api.Controllers;
                 var errors = ModelState.Values.SelectMany(v => v.Errors)
                     .Select(e => e.ErrorMessage)
                     .ToList();
-                return BadRequest(new { Errors = errors });            }
+                return BadRequest(new { Errors = errors });
+                
+            }
         
             var command = new UpdateBookCommand(bookId, bookDto);
             var result = await _sender.Send(command, cancellationToken);
         
             return result.IsSuccess ? Ok() : BadRequest(result.Error);
         }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteBookAsync(Guid bookId)
+        {
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState.Values.SelectMany(v => v.Errors)
+                    .Select(e => e.ErrorMessage)
+                    .ToList();
+                return BadRequest(new { Errors = errors });
+                
+            }
+
+            var command = new DeleteBookCommand(bookId);
+            
+            var result = await _sender.Send(command);
+            return result.IsSuccess ? Ok() : NotFound(result.Error);
+
+        }
+        
     }

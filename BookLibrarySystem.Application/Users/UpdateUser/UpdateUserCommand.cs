@@ -3,4 +3,13 @@ using BookLibrarySystem.Domain.Abstraction;
 
 namespace BookLibrarySystem.Application.Users.UpdateUser;
 
-public sealed record UpdateUserCommand(Guid UserId,string? FirstName,string? LastName,string? Email,string? Username) : ICommand<Result>;
+public sealed record UpdateUserCommand(Guid UserId,UpdateUserDto UserDto) : ICommand;
+
+public sealed record UpdateUserDto( 
+    string? FirstName, 
+    string? LastName, 
+    string? Email, 
+    string? Username, 
+    string? PhoneNumber, 
+    string? Password
+);

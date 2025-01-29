@@ -1,54 +1,64 @@
-﻿using BookLibrarySystem.Application.Abstractions.Messaging;
+﻿using BookLibrarySystem.Application.Abstractions.Identity;
+using BookLibrarySystem.Application.Abstractions.Messaging;
 using BookLibrarySystem.Application.Exceptions;
 using BookLibrarySystem.Domain.Abstraction;
 using BookLibrarySystem.Domain.Users;
-using BookLibrarySystem.Domain.UsersBooks;
-using Microsoft.AspNetCore.Identity;
+
 
 namespace BookLibrarySystem.Application.Users.RegisterUser;
 
-internal sealed class RegisterUserCommandHandler : ICommandHandler<RegisterUserCommand, Result<ApplicationUser>>
-{
-    private readonly IApplicationUserRepository _applicationUserRepository;
-    private readonly UserManager<ApplicationUser> _userManager;
-    private readonly IUnitOfWork _unitOfWork;
-
-    public RegisterUserCommandHandler(IApplicationUserRepository applicationUserRepository, UserManager<ApplicationUser> userManager,
-        IUnitOfWork unitOfWork)
+ internal sealed class RegisterUserCommandHandler : ICommandHandler<RegisterUserCommand, RegisterUserResponseDTO>
     {
-        _applicationUserRepository = applicationUserRepository;
-        _userManager = userManager;
-        _unitOfWork = unitOfWork;
-    }
+        private readonly IApplicationUserRepository _applicationUserRepository;
+        private readonly IUserManager _userManager;
 
-    public async Task<Result<Result<ApplicationUser>>> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
-    {
-        try
+        public RegisterUserCommandHandler(IApplicationUserRepository applicationUserRepository, IUserManager userManager )
         {
-            var name = new Name(request.FirstName, request.LastName);
+            _applicationUserRepository = applicationUserRepository;
+            _userManager = userManager;
+        }
 
-            var user = ApplicationUser.Create(name, request.DateOfBirth, request.Email, request.Username);
-
-            var identityResult = await _userManager.CreateAsync(user, request.Password);
-            if (!identityResult.Succeeded)
+        public async Task<Result<RegisterUserResponseDTO>> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
+        {
+            try
             {
-                var errors = string.Join(", ", identityResult.Errors.Select(e => e.Description));
-                return Result.Failure<ApplicationUser>(ApplicationUserErrors.NotFound);
+                var existingUser = await _userManager.FindByNameAsync(request.CommandDTO.Username, cancellationToken);
+                var existingUserEmail = await _userManager.FindByEmailAsync(request.CommandDTO.Email, cancellationToken);
+
+                if (existingUser != null || existingUserEmail != null)
+                {
+                    return Result.Failure<RegisterUserResponseDTO>(new Error("UserAlreadyExists", "The username or email is already taken."));
+                }
+                var name = new Name(request.CommandDTO.FirstName, request.CommandDTO.LastName);
+                var user = ApplicationUser.Create(name, request.CommandDTO.DateOfBirth, request.CommandDTO.Email, request.CommandDTO.Username);
+
+                var identityResult = await _userManager.CreateAsync(user, request.CommandDTO.Password, cancellationToken);
+                if (!identityResult.Succeeded)
+                {
+                    var errors = string.Join(", ", identityResult.Errors.Select(e => e.Description));
+                    return Result.Failure<RegisterUserResponseDTO>(new Error("UserCreationFailed", errors));
+                }
+
+                await _applicationUserRepository.AddAsync(user, cancellationToken);
+
+                var userResponse = new RegisterUserResponseDTO(
+                    user.Id,
+                    user.Name.FirstName,
+                    user.Name.LastName,
+                    user.Email!,
+                    user.UserName!,
+                    user.DateOfBirth
+                );
+
+                return Result.Success(userResponse);
             }
-
-            await _applicationUserRepository.AddAsync(user, cancellationToken);
-
-
-            await _unitOfWork.SaveChangesAsync(cancellationToken);
-            return Result.Success(user);
-        }
-        catch (ConcurrencyException)
-        {
-            return Result.Failure<ApplicationUser>(ApplicationUserErrors.Overlap);
-        }
-        catch (Exception ex)
-        {
-            return Result.Failure<ApplicationUser>(new Error("DatabaseError", ex.Message));
+            catch (ConcurrencyException)
+            {
+                return Result.Failure<RegisterUserResponseDTO>(ApplicationUserErrors.Overlap);
+            }
+            catch (Exception ex)
+            {
+                return Result.Failure<RegisterUserResponseDTO>(new Error("DatabaseError", ex.Message));
+            }
         }
     }
-}

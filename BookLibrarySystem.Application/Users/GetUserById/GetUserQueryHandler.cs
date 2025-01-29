@@ -1,5 +1,4 @@
 using BookLibrarySystem.Application.Abstractions.Messaging;
-using BookLibrarySystem.Application.Users.GetUser;
 using BookLibrarySystem.Domain.Abstraction;
 using BookLibrarySystem.Domain.Users;
 
@@ -23,13 +22,13 @@ internal sealed class GetUserQueryHandler : IQueryHandler<GetUserByIdQuery, User
         }
 
         var response = new UserResponse
-        {
-            Id = user.Id,
-            FirstName = user.Name.FirstName,
-            LastName = user.Name.LastName,
-            Email = user.Email,
-            Username = user.UserName
-        };
+        (
+            user.Id,
+            user.Name.FirstName,
+            user.Name.LastName,
+            user.Email!,
+            user.UserName!
+        );
 
         return response;
     }

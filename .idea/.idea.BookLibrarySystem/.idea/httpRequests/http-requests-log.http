@@ -1,3 +1,43 @@
+POST http://localhost:5057/api/Auth/register
+Content-Type: application/json
+Content-Length: 172
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "Username": "newuser",
+  "FirstName": "John",
+  "LastName": "Doe",
+  "DateOfBirth": "1990-01-01",
+  "Email": "john.doe@example.com",
+  "Password": "SecurePassword123"
+}
+
+<> 2025-01-28T021851.500.txt
+
+###
+
+POST http://localhost:5057/api/Auth/register
+Content-Type: application/json
+Content-Length: 172
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "Username": "newuser",
+  "FirstName": "John",
+  "LastName": "Doe",
+  "DateOfBirth": "1990-01-01",
+  "Email": "john.doe@example.com",
+  "Password": "SecurePassword123"
+}
+
+<> 2025-01-28T020555.500.txt
+
+###
+
 PUT http://localhost:5057/api/Book/00a0aab2-6b79-4ee2-815d-11b7ce0b211f
 Content-Type: application/json
 Content-Length: 297
@@ -860,38 +900,6 @@ Accept: */*
 content-length: 0
 
 <> 2025-01-23T205451.500.txt
-
-###
-
-POST http://localhost:5057/api/authors/cfdd0081-394c-435c-992a-f64527fb0eb4/books
-Content-Type: application/json; charset=utf-8
-Content-Length: 113
-User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "Title": "test boook",
-  "Description": "Desc1",
-  "PublicationDate": "2025-01-22T00:00:00",
-  "Pages": 200
-}
-
-###
-
-POST http://localhost:5057/api/authors/cfdd0081-394c-435c-992a-f64527fb0eb4/books
-Content-Type: application/json; charset=utf-8
-Content-Length: 104
-User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.6
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "Title": "0",
-  "Description": "Desc1",
-  "PublicationDate": "2025-01-22T00:00:00",
-  "Pages": 200
-}
 
 ###
 

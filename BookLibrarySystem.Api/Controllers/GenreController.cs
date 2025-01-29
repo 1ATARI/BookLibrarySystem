@@ -5,12 +5,15 @@ using BookLibrarySystem.Application.Genres.GetAllGenres;
 using BookLibrarySystem.Application.Genres.GetGenreById;
 using BookLibrarySystem.Application.Genres.UpdateGenre;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookLibrarySystem.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
+
 public class GenreController : ControllerBase
 {
     private readonly ISender _sender;
@@ -52,8 +55,8 @@ public class GenreController : ControllerBase
         GenreDto genreDto,
         CancellationToken cancellationToken = default)
     {
-        var query = new CreateGenreCommand(genreDto.Name, genreDto.Description);
-        var result = await _sender.Send(query, cancellationToken);
+        var command = new CreateGenreCommand(genreDto.Name, genreDto.Description);
+        var result = await _sender.Send(command, cancellationToken);
         return result.IsSuccess ? Ok() : NotFound(result.Error);
     }
     
@@ -63,8 +66,8 @@ public class GenreController : ControllerBase
         [FromBody] GenreDto genreDto,
         CancellationToken cancellationToken = default)
     {
-        var query = new UpdateGenreCommand(genreId , genreDto.Name, genreDto.Description);
-        var result = await _sender.Send(query, cancellationToken);
+        var command = new UpdateGenreCommand(genreId , genreDto.Name, genreDto.Description);
+        var result = await _sender.Send(command, cancellationToken);
         return result.IsSuccess ? Ok() : NotFound(result.Error);
     }
 
@@ -74,8 +77,8 @@ public class GenreController : ControllerBase
         CancellationToken cancellationToken = default)
     {
 
-        var query = new DeleteGenreCommand(genreId);
-        var result = await _sender.Send(query , cancellationToken);
+        var command = new DeleteGenreCommand(genreId);
+        var result = await _sender.Send(command , cancellationToken);
         return result.IsSuccess ? Ok() : NotFound(result.Error);
         
     }

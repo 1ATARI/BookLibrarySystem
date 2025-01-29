@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="HttpClientEndpointsTabState">
-    <option name="requestToText" value="&lt;CachedHttpClientTabRequests&gt;&#10;  &lt;entry key=&quot;2620a35a120cf513c7b0ec7f4519556b718ae3e9&quot; value=&quot;###&amp;#10;PUT http://localhost:5057/api/Book/00a0aab2-6b79-4ee2-815d-11b7ce0b211f&amp;#10;Content-Type: application/json&amp;#10;&amp;#10;{&amp;#10;  &amp;quot;title&amp;quot;: &amp;quot;testtttt&amp;quot;,&amp;#10;  &amp;quot;description&amp;quot;: &amp;quot;b&amp;quot;,&amp;#10;  &amp;quot;publicationDate&amp;quot;: &amp;quot;2025-01-25T23:05:35.569Z&amp;quot;,&amp;#10;  &amp;quot;pages&amp;quot;: 50,&amp;#10;  &amp;quot;authorId&amp;quot;: &amp;quot;67880da1-1dfa-4300-8549-0d88ad03064e&amp;quot;,&amp;#10;  &amp;quot;isAvailable&amp;quot;: true,&amp;#10;  &amp;quot;genreIds&amp;quot;: [&amp;#10;    &amp;quot;71336c96-a276-462e-b76c-cc87947bc7ca&amp;quot;,&amp;#10;    &amp;quot;96214284-3aea-4d06-aca2-c3c525e32da8&amp;quot;&amp;#10;  ]&amp;#10;}&amp;#10;&quot; /&gt;&#10;&lt;/CachedHttpClientTabRequests&gt;" />
+    <option name="requestToText" value="&lt;CachedHttpClientTabRequests&gt;&#10;  &lt;entry key=&quot;8358eb4568a5958eb01c5dbc5e6b607fe624adda&quot; value=&quot;###&amp;#10;PUT http://localhost:5057/api/User/{{userId}}&quot; /&gt;&#10;&lt;/CachedHttpClientTabRequests&gt;" />
   </component>
 </project>

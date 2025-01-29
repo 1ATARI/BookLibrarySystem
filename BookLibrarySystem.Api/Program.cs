@@ -1,27 +1,27 @@
-using System.Text.Json.Serialization;
+using BookLibrarySystem.Api.Extensions;
 using BookLibrarySystem.Application;
 using BookLibrarySystem.Domain.Users;
 using BookLibrarySystem.Infrastructure;
+
 using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+
+
+
 
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole<Guid>>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
 
-// builder.Services.AddControllers().AddJsonOptions(x =>
-//     x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
-
 
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -36,7 +36,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCustomExceptionHandler();
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

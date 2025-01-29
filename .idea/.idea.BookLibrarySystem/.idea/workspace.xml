@@ -9,122 +9,145 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53e84578-ed43-44cf-a7f3-3b5a2da1edec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/Dto/AuthorDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/Dto/GenreDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Authors/AddAuthor/AddAuthorCommandValidations.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Authors/AddBookToAuthor/AddBookDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Authors/AddBookToAuthor/AddBookToAuthorCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Authors/DeleteAuthor/DeleteAuthorCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Authors/GetAllAuthors/AuthorResponseDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Authors/GetAllAuthors/BookResponseDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Authors/UpdateAuthor/UpdateAuthorCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Authors/UpdateAuthor/UpdateAuthorCommandHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Authors/UpdateAuthor/UpdateAuthorCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Books/AddGenre/AddGenreToBookCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Books/CreateBooks/CreateBookCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Books/CreateBooks/CreateBookDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Books/DeleteBook/DeleteBookCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Books/Dto/AuthorDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Books/Dto/BookResponseDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Books/Dto/GenreDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Books/UpdateBook/UpdateBookCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Books/UpdateBook/UpdateBookDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/BooksGenres/AddBookGenre/AddBookGenreCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/BooksGenres/DeleteBookGenre/DeleteBookGenreCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/BooksGenres/UpdateBookGenre/UpdateGenreForBookCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Genres/CreateGenre/CreateGenreCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Genres/DeleteGenre/DeleteGenreCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Genres/Dto/GenreResponseDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Genres/UpdateGenre/UpdateGenreCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/DeleteUser/DeleteUserCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/RegisterUser/RegisterUserCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/UpdateUser/UpdateUserCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/UsersBooks/BorrowUserBook/BorrowBookCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/UsersBooks/CreateUserBook/CreateUserBookCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/UsersBooks/DeleteUserBook/DeleteUserBookCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/UsersBooks/ReturnUserBook/ReturnBookCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/UsersBooks/UpdateUserBook/UpdateUserBookCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/Abstraction/IIdentifiable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/Abstraction/IRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/Users/IApplicationUserRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/Configurations/AuthorConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/Configurations/BookConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/Configurations/BookGenreConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/Configurations/GenreConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/Configurations/UserBookConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/Configurations/UserConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/DependencyInjection.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/Email/EmailService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/Repositories/ApplicationUserRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/Repositories/AuthorRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/Repositories/BookGenreRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/Repositories/BookRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/Repositories/GenreRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/Repositories/Repository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/Repositories/UserBookRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/test.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/Controllers/WeatherForecastController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/Controllers/WeatherForecastController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/Extensions/ApplicationBuilderExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Abstractions/Identity/ISignInManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Abstractions/Identity/IUserManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Abstractions/JWT/IJwtTokenService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/LoginUser/LoginUserCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/LoginUser/LoginUserCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/LoginUser/LoginUserResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/RegisterUser/RegisterUserCommandDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/RegisterUser/RegisterUserResponseDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/Users/Events/UserUpdatedDomainEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/ForIdentity/SignInManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/ForIdentity/UserManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/Jwt/JwtTokenService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BookLibrarySystem/.idea/httpClient.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookLibrarySystem/.idea/httpClient.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BookLibrarySystem/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookLibrarySystem/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BookLibrarySystem/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookLibrarySystem/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/Controllers/AuthorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/Controllers/AuthorController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/Controllers/BookController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/Controllers/BookController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/Controllers/GenreController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/Controllers/GenreController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Authors/AddAuthor/AddAuthorCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Authors/AddAuthor/AddAuthorCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Authors/AddBookToAuthor/AddBookToAuthorCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Authors/AddBookToAuthor/AddBookToAuthorCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Authors/AddBookToAuthor/AddBookToAuthorCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Authors/AddBookToAuthor/AddBookToAuthorCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Authors/DeleteAuthor/DeleteAuthorCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Authors/DeleteAuthor/DeleteAuthorCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Authors/GetAllAuthors/GetAllAuthorQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Authors/GetAllAuthors/GetAllAuthorQuery.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Authors/GetAllAuthors/GetAllAuthorQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Authors/GetAllAuthors/GetAllAuthorQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Authors/GetAuthorById/GetBookByIdQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Authors/GetAuthorById/GetAuthorByIdQuery.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Authors/GetAuthorById/GetBookByIdQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Authors/GetAuthorById/GetAuthorByIdHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Books/AddGenre/AddGenreToBookCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Books/AddGenre/AddGenreToBookCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Books/CreateBooks/CreateBookCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Books/CreateBooks/CreateBookCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Books/CreateBooks/CreateBookCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Books/CreateBooks/CreateBookCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Books/DeleteBook/DeleteBookCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Books/DeleteBook/DeleteBookCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Books/GetAllBooks/GetAllBooksQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Books/GetAllBooks/GetAllBooksQuery.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Books/GetAllBooks/GetAllBooksQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Books/GetAllBooks/GetAllBooksQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Books/GetBookById/GetBookByIdQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Books/GetBookById/GetBookByIdQuery.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Books/GetBookById/GetBookByIdQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Books/GetBookById/GetBookByIdQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Books/UpdateBook/UpdateBookCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Books/UpdateBook/UpdateBookCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Books/UpdateBook/UpdateBookCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Books/UpdateBook/UpdateBookCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/BooksGenres/DeleteBookGenre/DeleteBookGenreCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/BooksGenres/DeleteBookGenre/DeleteBookGenreCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/BooksGenres/GetBookGenre/GetBookGenreQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/BooksGenres/GetBookGenre/GetBookGenreQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/BooksGenres/UpdateBookGenre/UpdateBookGenreCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/BooksGenres/UpdateBookGenre/UpdateBookGenreCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/DependencyInjection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Genres/GetAllGenres/GenreResponse.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Genres/GetAllGenres/GetAllGenresQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Genres/GetAllGenres/GetAllGenresQuery.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Genres/GetAllGenres/GetAllGenresQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Genres/GetAllGenres/GetAllGenresQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Genres/GetGenreById/GetGenreByIdQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Genres/GetGenreById/GetGenreByIdQuery.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Genres/GetGenreById/GetGenreByIdQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Genres/GetGenreById/GetGenreByIdQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Genres/UpdateGenre/UpdateGenreCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Genres/UpdateGenre/UpdateGenreCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/DeleteUser/DeleteUserCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/DeleteUser/DeleteUserCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/BookLibrarySystem.Api.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/BookLibrarySystem.Api.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/BookLibrarySystem.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/BookLibrarySystem.Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/BookLibrarySystem.Api.exe" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/BookLibrarySystem.Api.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/BookLibrarySystem.Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/BookLibrarySystem.Api.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/BookLibrarySystem.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/BookLibrarySystem.Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/BookLibrarySystem.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/BookLibrarySystem.Application.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/BookLibrarySystem.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/BookLibrarySystem.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/BookLibrarySystem.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/BookLibrarySystem.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/BookLibrarySystem.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/BookLibrarySystem.Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/BookLibrarySystem.Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/BookLibrarySystem.Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.SqlServer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.SqlServer.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/Microsoft.IdentityModel.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/Microsoft.IdentityModel.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/Microsoft.IdentityModel.JsonWebTokens.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/Microsoft.IdentityModel.JsonWebTokens.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/Microsoft.IdentityModel.Logging.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/Microsoft.IdentityModel.Logging.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/Microsoft.IdentityModel.Tokens.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/Microsoft.IdentityModel.Tokens.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/System.IdentityModel.Tokens.Jwt.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/System.IdentityModel.Tokens.Jwt.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/bin/Debug/net9.0/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/BookLibrarySystem.Api.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/BookLibrarySystem.Api.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/BookLibrarySystem.Api.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/BookLibrarySystem.Api.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/Debug/net9.0/BookLibrarySystem.Api.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/Debug/net9.0/BookLibrarySystem.Api.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/Debug/net9.0/BookLibrarySystem.Api.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/Debug/net9.0/BookLibrarySystem.Api.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/Debug/net9.0/BookLibrarySystem.Api.MvcApplicationPartsAssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/Debug/net9.0/BookLibrarySystem.Api.MvcApplicationPartsAssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/Debug/net9.0/BookLibrarySystem.Api.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/Debug/net9.0/BookLibrarySystem.Api.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/Debug/net9.0/BookLibrarySystem.Api.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/Debug/net9.0/BookLibrarySystem.Api.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/Debug/net9.0/BookLibrarySystem.Api.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/Debug/net9.0/BookLibrarySystem.Api.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/Debug/net9.0/BookLibrarySystem.Api.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/Debug/net9.0/BookLibrarySystem.Api.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/Debug/net9.0/BookLibrarySystem.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/Debug/net9.0/BookLibrarySystem.Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/Debug/net9.0/BookLibrarySystem.Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/Debug/net9.0/BookLibrarySystem.Api.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/Debug/net9.0/BookLibrarySystem.Api.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/Debug/net9.0/BookLibrarySystem.Api.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/Debug/net9.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/Debug/net9.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/Debug/net9.0/ref/BookLibrarySystem.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/Debug/net9.0/ref/BookLibrarySystem.Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/Debug/net9.0/refint/BookLibrarySystem.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/Debug/net9.0/refint/BookLibrarySystem.Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Api/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Abstractions/Behaviours/ValidationBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Abstractions/Behaviours/ValidationBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Authors/AddBookToAuthor/AddBookDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Authors/AddBookToAuthor/AddBookDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/BookLibrarySystem.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/BookLibrarySystem.Application.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/GetAlUsers/GetAllUsersQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/GetAlUsers/GetAllUsersQuery.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/GetAlUsers/GetAllUsersQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/GetAlUsers/GetAllUsersQueryHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/GetUserById/GetUserQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/GetUserById/GetUserQuery.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/GetUserById/GetUserQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/GetUserById/GetUserQueryHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/GetUserById/UserResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/GetUserById/UserResponse.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/RegisterUser/RegisterUserCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/RegisterUser/RegisterUserCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/RegisterUser/RegisterUserCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/RegisterUser/RegisterUserCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/RegisterUser/RegisterUserCommandValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/RegisterUser/RegisterUserCommandValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/UpdateUser/UpdateUserCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/UpdateUser/UpdateUserCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/UpdateUser/UpdateUserCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/UpdateUser/UpdateUserCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/UsersBooks/BorrowUserBook/BorrowUserBookCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/UsersBooks/BorrowUserBook/BorrowUserBookCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/UsersBooks/DeleteUserBook/DeleteUserBookCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/UsersBooks/DeleteUserBook/DeleteUserBookCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/UsersBooks/GetAllUserBook/GetAllUserBookQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/UsersBooks/GetAllUserBook/GetAllUserBookQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/UsersBooks/GetUserBookById/GetUserBookByIdQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/UsersBooks/GetUserBookById/GetUserBookByIdQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/UsersBooks/ReturnUserBook/ReturnUserBookCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/UsersBooks/ReturnUserBook/ReturnUserBookCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/UsersBooks/UpdateUserBook/UpdateUserBookCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/UsersBooks/UpdateUserBook/UpdateUserBookCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/Abstraction/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/Abstraction/Entity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/Authors/Author.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/Authors/Author.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/Authors/AuthorErrors.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/Authors/AuthorErrors.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/Authors/IAuthorRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/Authors/IAuthorRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/Books/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/Books/Book.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/Books/BookErrors.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/Books/BookErrors.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/Books/IBookRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/Books/IBookRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/BooksGenres/IBookGenreRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/BooksGenres/IBookGenreRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/Genres/Genre.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/Genres/Genre.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/Genres/GenreErrors.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/Genres/GenreErrors.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/Genres/IGenreRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/Genres/IGenreRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/Users/IUserRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/Users/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/Users/ApplicationUser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/Users/UserErrors.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/Users/ApplicationUserErrors.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/UsersBooks/IUserBookRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/UsersBooks/IUserBookRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/UpdateUser/UpdateUserCommandValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/Users/UpdateUser/UpdateUserCommandValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/bin/Debug/net9.0/BookLibrarySystem.Application.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/bin/Debug/net9.0/BookLibrarySystem.Application.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/bin/Debug/net9.0/BookLibrarySystem.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/bin/Debug/net9.0/BookLibrarySystem.Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/bin/Debug/net9.0/BookLibrarySystem.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/bin/Debug/net9.0/BookLibrarySystem.Application.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/bin/Debug/net9.0/BookLibrarySystem.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/bin/Debug/net9.0/BookLibrarySystem.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/bin/Debug/net9.0/BookLibrarySystem.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/bin/Debug/net9.0/BookLibrarySystem.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/BookLibrarySystem.Application.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/BookLibrarySystem.Application.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/BookLibrarySystem.Application.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/BookLibrarySystem.Application.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/Debug/net9.0/BookLibrarySystem.Application.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/Debug/net9.0/BookLibrarySystem.Application.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/Debug/net9.0/BookLibrarySystem.Application.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/Debug/net9.0/BookLibrarySystem.Application.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/Debug/net9.0/BookLibrarySystem.Application.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/Debug/net9.0/BookLibrarySystem.Application.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/Debug/net9.0/BookLibrarySystem.Application.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/Debug/net9.0/BookLibrarySystem.Application.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/Debug/net9.0/BookLibrarySystem.Application.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/Debug/net9.0/BookLibrarySystem.Application.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/Debug/net9.0/BookLibrarySystem.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/Debug/net9.0/BookLibrarySystem.Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/Debug/net9.0/BookLibrarySystem.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/Debug/net9.0/BookLibrarySystem.Application.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/Debug/net9.0/BookLibrarySystem.Application.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/Debug/net9.0/BookLibrarySystem.Application.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/Debug/net9.0/ref/BookLibrarySystem.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/Debug/net9.0/ref/BookLibrarySystem.Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/Debug/net9.0/refint/BookLibrarySystem.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/Debug/net9.0/refint/BookLibrarySystem.Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Application/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/Users/ApplicationUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/Users/ApplicationUser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/Users/ApplicationUserErrors.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/Users/ApplicationUserErrors.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/UsersBooks/UserBook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/UsersBooks/UserBook.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/ApplicationDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/bin/Debug/net9.0/BookLibrarySystem.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/bin/Debug/net9.0/BookLibrarySystem.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/bin/Debug/net9.0/BookLibrarySystem.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/bin/Debug/net9.0/BookLibrarySystem.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/obj/Debug/net9.0/BookLibrarySystem.Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/obj/Debug/net9.0/BookLibrarySystem.Domain.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/obj/Debug/net9.0/BookLibrarySystem.Domain.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/obj/Debug/net9.0/BookLibrarySystem.Domain.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/obj/Debug/net9.0/BookLibrarySystem.Domain.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/obj/Debug/net9.0/BookLibrarySystem.Domain.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/obj/Debug/net9.0/BookLibrarySystem.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/obj/Debug/net9.0/BookLibrarySystem.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/obj/Debug/net9.0/BookLibrarySystem.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/obj/Debug/net9.0/BookLibrarySystem.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/obj/Debug/net9.0/BookLibrarySystem.Domain.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/obj/Debug/net9.0/BookLibrarySystem.Domain.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/obj/Debug/net9.0/ref/BookLibrarySystem.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/obj/Debug/net9.0/ref/BookLibrarySystem.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/obj/Debug/net9.0/refint/BookLibrarySystem.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/obj/Debug/net9.0/refint/BookLibrarySystem.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Domain/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Domain/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/BookLibrarySystem.Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/BookLibrarySystem.Infrastructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/DependencyInjection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/bin/Debug/net9.0/BookLibrarySystem.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/bin/Debug/net9.0/BookLibrarySystem.Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/bin/Debug/net9.0/BookLibrarySystem.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/bin/Debug/net9.0/BookLibrarySystem.Application.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/bin/Debug/net9.0/BookLibrarySystem.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/bin/Debug/net9.0/BookLibrarySystem.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/bin/Debug/net9.0/BookLibrarySystem.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/bin/Debug/net9.0/BookLibrarySystem.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/bin/Debug/net9.0/BookLibrarySystem.Infrastructure.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/bin/Debug/net9.0/BookLibrarySystem.Infrastructure.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/bin/Debug/net9.0/BookLibrarySystem.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/bin/Debug/net9.0/BookLibrarySystem.Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/bin/Debug/net9.0/BookLibrarySystem.Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/bin/Debug/net9.0/BookLibrarySystem.Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/BookLibrarySystem.Infrastructure.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/BookLibrarySystem.Infrastructure.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/BookLibrarySystem.Infrastructure.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/BookLibrarySystem.Infrastructure.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/BookLibrarySystem.Infrastructure.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/BookLibrarySystem.Infrastructure.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/Debug/net9.0/BookLibrarySystem.Infrastructure.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/Debug/net9.0/BookLibrarySystem.Infrastructure.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/Debug/net9.0/BookLibrarySystem.Infrastructure.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/Debug/net9.0/BookLibrarySystem.Infrastructure.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/Debug/net9.0/BookLibrarySystem.Infrastructure.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/Debug/net9.0/BookLibrarySystem.Infrastructure.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/Debug/net9.0/BookLibrarySystem.Infrastructure.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/Debug/net9.0/BookLibrarySystem.Infrastructure.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/Debug/net9.0/BookLibrarySystem.Infrastructure.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/Debug/net9.0/BookLibrarySystem.Infrastructure.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/Debug/net9.0/BookLibrarySystem.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/Debug/net9.0/BookLibrarySystem.Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/Debug/net9.0/BookLibrarySystem.Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/Debug/net9.0/BookLibrarySystem.Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/Debug/net9.0/BookLibrarySystem.Infrastructure.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/Debug/net9.0/BookLibrarySystem.Infrastructure.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/Debug/net9.0/ref/BookLibrarySystem.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/Debug/net9.0/ref/BookLibrarySystem.Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/Debug/net9.0/refint/BookLibrarySystem.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/Debug/net9.0/refint/BookLibrarySystem.Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.Infrastructure/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookLibrarySystem.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/BookLibrarySystem.sln.DotSettings.user" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -167,6 +190,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c73b3c6c598640c592fd3c6fa226c286e90908/6a/ae1edba3/ICollection`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c73b3c6c598640c592fd3c6fa226c286e90908/6f/623f8c30/IReadOnlyList`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1419ed4112a5f67e99e1dec32aef5592bcdecca3da27dba832c32e1b0ca14/ServiceCollectionExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1622b8f95d27187bc1fb39bac49bd64e928773df4fda6fcf6271680be54a2/UserManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1b81cb3be224213a6a73519b6e340a628d9a1fb8629c351a186a26f6376669/List.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1e8feaadf5c3fa14d36ea2a638c432a2e1a47b7837d8b83d88303c5d9c15cf/AsyncValueTaskMethodBuilderT.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2565b9d99fdde488bc7801b84387b2cc864959cfb63212e1ff576fc9c6bb7e/CancellationToken.cs" root0="FORCE_HIGHLIGHTING" />
@@ -186,6 +210,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a0b45f29f34f594814a7b1fbc25fe5ef3c18257956ed4f4fbfa68717db58/DbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b4f8b29071cfcf73e927671b936ba53110f1b613a1cc9bef4fc4f07dd0fbe9/Exception.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b71173da8bead679f1e87cd2a8f5f12964c60fc733c2b92466cfefe323ae42/MediatrServiceConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d7b38c7b68e42a73acef29a6dc1216d8ab2873c6617f3688a729528bff736/SignInManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/de42252149bfb8f47f67ed31af8c6d93b7153b2a59df29d2eb40cef2be10a2b3/AffectedCountModificationCommandBatch.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e096e6f12c5d6b49356bc34ff1ea08738f910c0929c9d717c9cba7f44288/EntityFrameworkQueryableExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BookLibrarySystem.Domain/UsersBooks/UserBook.cs" root0="FORCE_HIGHLIGHTING" />
@@ -210,21 +235,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.BookLibrarySystem.Api: http.executor": "Run",
-    "HTTP Request.BookLibrarySystem-endpoints_1 | #1.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "advanced.settings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.BookLibrarySystem.Api: http.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.BookLibrarySystem-endpoints_1 | #1.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.BookLibrarySystem.Api: http">
     <configuration name="BookLibrarySystem-endpoints_1 | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/BookLibrarySystem-endpoints_1.http" requestIdentifier="#1" runType="Run single request">
       <method v="2" />
@@ -295,6 +320,11 @@
       <workItem from="1737737733964" duration="21033000" />
       <workItem from="1737820103233" duration="13680000" />
       <workItem from="1737839222417" duration="8388000" />
+      <workItem from="1737905978625" duration="5376000" />
+      <workItem from="1738007779080" duration="600000" />
+      <workItem from="1738010498817" duration="17937000" />
+      <workItem from="1738081210422" duration="22593000" />
+      <workItem from="1738171057539" duration="968000" />
     </task>
     <task id="LOCAL-00001" summary="Domain Layer">
       <option name="closed" value="true" />
@@ -312,7 +342,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735343534588</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Build Controller">
+      <option name="closed" value="true" />
+      <created>1737906423284</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1737906423284</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -324,7 +362,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Domain Layer" />
     <MESSAGE value="Application Layer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Application Layer" />
+    <MESSAGE value="Build Controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Build Controller" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

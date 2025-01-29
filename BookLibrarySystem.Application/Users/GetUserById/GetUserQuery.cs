@@ -1,5 +1,4 @@
 ﻿using BookLibrarySystem.Application.Abstractions.Messaging;
-using BookLibrarySystem.Application.Users.GetUser;
 
 namespace BookLibrarySystem.Application.Users.GetUserById;
 

@@ -6,24 +6,31 @@ public class UpdateUserCommandValidator : AbstractValidator<UpdateUserCommand>
 {
     public UpdateUserCommandValidator()
     {
-        RuleFor(x => x.UserId)
-            .NotEmpty().WithMessage("User ID is required.")
-            .NotEqual(Guid.Empty).WithMessage("User ID must not be empty.");
+        RuleFor(x => x.UserDto.FirstName)
+            .MaximumLength(100).WithMessage("First Name cannot be longer than 100 characters.")
+            .OverridePropertyName("FirstName");
 
-        RuleFor(x => x.FirstName)
-            .MaximumLength(50).WithMessage("First name must not exceed 50 characters.")
-            .When(x => !string.IsNullOrWhiteSpace(x.FirstName));
+        RuleFor(x => x.UserDto.LastName)
+            .MaximumLength(100).WithMessage("Last Name cannot be longer than 100 characters.")
+            .OverridePropertyName("LastName");
 
-        RuleFor(x => x.LastName)
-            .MaximumLength(50).WithMessage("Last name must not exceed 50 characters.")
-            .When(x => !string.IsNullOrWhiteSpace(x.LastName));
+        RuleFor(x => x.UserDto.Email)
+            .EmailAddress().WithMessage("Invalid email format.")
+            .MaximumLength(150).WithMessage("Email cannot be longer than 150 characters.")
+            .OverridePropertyName("Email");
 
-        RuleFor(x => x.Email)
-            .EmailAddress().WithMessage("Email must be a valid email address.")
-            .When(x => !string.IsNullOrWhiteSpace(x.Email));
+        RuleFor(x => x.UserDto.Username)
+            .MaximumLength(100).WithMessage("Username cannot be longer than 100 characters.")
+            .OverridePropertyName("Username");
 
-        RuleFor(x => x.Username)
-            .MaximumLength(50).WithMessage("Username must not exceed 50 characters.")
-            .When(x => !string.IsNullOrWhiteSpace(x.Username));
+        RuleFor(x => x.UserDto.PhoneNumber)
+            .Matches(@"^\+?\d{10,15}$").WithMessage("Phone number is not valid.")
+            .When(x => !string.IsNullOrWhiteSpace(x.UserDto.PhoneNumber))
+            .OverridePropertyName("PhoneNumber");
+
+        RuleFor(x => x.UserDto.Password)
+            .MinimumLength(6).WithMessage("Password should be at least 6 characters.")
+            .When(x => !string.IsNullOrWhiteSpace(x.UserDto.Password))
+            .OverridePropertyName("Password");
     }
 }

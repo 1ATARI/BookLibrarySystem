@@ -7,12 +7,15 @@ using BookLibrarySystem.Application.Authors.GetAuthorById;
 using BookLibrarySystem.Application.Authors.UpdateAuthor;
 using BookLibrarySystem.Domain.Authors;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookLibrarySystem.Api.Controllers;
 
-[Route("api/authors")]
+[Route("api/[controller]")]
 [ApiController]
+[Authorize]
+
 public class AuthorController : ControllerBase
 {
     private readonly ISender _sender;
@@ -25,9 +28,13 @@ public class AuthorController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetAllAuthorsAsync(
         [FromQuery] int pageNumber = 1,
-        [FromQuery] int pageSize = 10,
+        [FromQuery] int pageSize = 0,
         CancellationToken cancellationToken = default)
     {
+        if (pageSize == 0)
+        {
+            pageSize = int.MaxValue;
+        }
         var query = new GetAllAuthorQuery { PageNumber = pageNumber, PageSize = pageSize };
         var result = await _sender.Send(query, cancellationToken);
 
