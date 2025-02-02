@@ -40,8 +40,13 @@ public class LoginUserCommandHandler : ICommandHandler<LoginUserCommand, LoginUs
             return Result.Failure<LoginUserResponse>(new Error("InvalidCredentials", "Invalid username or password."));
         }
 
-        var token = _jwtTokenService.GenerateToken(user);
-        var response = new LoginUserResponse(token);
+        var tokenResult = _jwtTokenService.GenerateToken(user);
+        if (tokenResult.IsFailure)
+        {
+    
+            return Result.Failure<LoginUserResponse>(tokenResult.Error);
+        }
+        var response = new LoginUserResponse(tokenResult.Value);
 
         return Result.Success(response);
     }

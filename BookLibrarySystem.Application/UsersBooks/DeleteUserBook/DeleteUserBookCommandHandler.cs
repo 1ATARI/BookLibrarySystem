@@ -5,7 +5,7 @@ using BookLibrarySystem.Domain.UsersBooks;
 
 namespace BookLibrarySystem.Application.UsersBooks.DeleteUserBook;
 
-internal sealed class DeleteUserBookCommandHandler : ICommandHandler<DeleteUserBookCommand, Result>
+internal sealed class DeleteUserBookCommandHandler : ICommandHandler<DeleteUserBookCommand>
 {
     private readonly IUserBookRepository _userBookRepository;
     private readonly IUnitOfWork _unitOfWork;
@@ -16,12 +16,12 @@ internal sealed class DeleteUserBookCommandHandler : ICommandHandler<DeleteUserB
         _unitOfWork = unitOfWork;
     }
 
-    public async Task<Result<Result>> Handle(DeleteUserBookCommand request, CancellationToken cancellationToken)
+    public async Task<Result> Handle(DeleteUserBookCommand request, CancellationToken cancellationToken)
     {
         try
         {
-            var exists = await _userBookRepository.ExistsByIdAsync(request.UserBookId,cancellationToken);
-            if (!exists)
+            var exists = await _userBookRepository.GetByIdAsync(request.UserBookId, cancellationToken: cancellationToken);
+            if (exists == null)
             {
                 return Result.Failure(UserBookErrors.UserBookNotFound);
             }

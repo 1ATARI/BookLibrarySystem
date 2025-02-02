@@ -4,4 +4,4 @@ using BookLibrarySystem.Domain.UsersBooks;
 
 namespace BookLibrarySystem.Application.UsersBooks.UpdateUserBook;
 
-public record UpdateUserBookCommand(Guid UserBookId, DateTime BorrowedDate, DateTime? ReturnedDate) : ICommand<UserBook>;
+public record UpdateUserBookCommand(Guid UserBookId ,UpdateUserBookRequest UserBookRequest) : ICommand<Guid>;

@@ -87,7 +87,7 @@ public class UpdateBookCommandHandler : ICommandHandler<UpdateBookCommand>
 
         if (bookDto.PublicationDate == default)
         {
-            return Result.Failure<Book>(new Error("ValidationError", "Invalid publication date."));
+            return Result.Failure<Book>(BookErrors.InvalidPublishDate);
         }
 
         var author = await _authorRepository.GetByIdAsync(bookDto.AuthorId, cancellationToken: cancellationToken);

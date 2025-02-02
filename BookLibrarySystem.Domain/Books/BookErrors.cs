@@ -14,6 +14,9 @@ public static class BookErrors
     public static Error InvalidBookId = new(
         "Book.InvalidAuthorId",
         "The Id for this book is invalid");
+    public static Error InvalidPublishDate = new(
+        "Book.InvalidPublishDate",
+        "Invalid publication date.");
 
     public static Error DuplicateGenre = new(
         "Book.Duplicate",

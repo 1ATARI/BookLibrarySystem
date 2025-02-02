@@ -1,6 +1,8 @@
-﻿namespace BookLibrarySystem.Application.Abstractions.Email;
+﻿using BookLibrarySystem.Domain.Abstraction;
+
+namespace BookLibrarySystem.Application.Abstractions.Email;
 
 public interface IEmailService
 {
-    Task SendAsync(string recipientEmail, string subject, string message);
+    Task<Result> SendAsync(string recipientEmail, string subject, string message);
 }

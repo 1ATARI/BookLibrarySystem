@@ -3,7 +3,6 @@ using BookLibrarySystem.Application.Users.GetUserById;
 using BookLibrarySystem.Application.Users.UpdateUser;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookLibrarySystem.Api.Controllers;
@@ -36,7 +35,7 @@ namespace BookLibrarySystem.Api.Controllers;
         }
 
         [HttpGet("{userId:guid}")]
-        public async Task<IActionResult> GetAuthorByIdAsync(
+        public async Task<IActionResult> GetUserByIdAsync(
             [FromRoute]Guid userId,
             CancellationToken cancellationToken = default)
         {
@@ -46,7 +45,7 @@ namespace BookLibrarySystem.Api.Controllers;
             return result.IsSuccess ? Ok(result.Value) : NotFound(result.Error);
         }
         [HttpPut("{userId:guid}")]
-        public async Task<IActionResult> UpdateAuthorAsync(
+        public async Task<IActionResult> UpdateUserAsync(
             Guid userId,
             [FromBody] UpdateUserDto userDto,
             CancellationToken cancellationToken = default)

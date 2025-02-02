@@ -320,3 +320,6 @@ E:\project\New folder\BookLibrarySystem\BookLibrarySystem.Api\bin\Debug\net9.0\S
 E:\project\New folder\BookLibrarySystem\BookLibrarySystem.Api\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.UI.dll
 E:\project\New folder\BookLibrarySystem\BookLibrarySystem.Api\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Abstractions.dll
 E:\project\New folder\BookLibrarySystem\BookLibrarySystem.Api\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Embedded.dll
+E:\project\New folder\BookLibrarySystem\BookLibrarySystem.Api\bin\Debug\net9.0\BouncyCastle.Cryptography.dll
+E:\project\New folder\BookLibrarySystem\BookLibrarySystem.Api\bin\Debug\net9.0\MailKit.dll
+E:\project\New folder\BookLibrarySystem\BookLibrarySystem.Api\bin\Debug\net9.0\MimeKit.dll

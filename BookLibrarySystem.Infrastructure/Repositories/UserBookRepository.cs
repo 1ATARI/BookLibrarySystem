@@ -12,12 +12,34 @@ internal sealed class UserBookRepository :Repository<UserBook > , IUserBookRepos
 
     public async Task<IEnumerable<UserBook>> GetByUserIdAsync(Guid userId, CancellationToken cancellationToken)
     {
-        return await _dbContext.Set<UserBook>().Where(e=>e.UserId== userId).ToListAsync(cancellationToken);
+        try
+        {
+            return await _dbContext.Set<UserBook>()
+                .Include(ub => ub.ApplicationUser) // Include ApplicationUser
+                .Include(ub => ub.Book) // Include Book
+                .Where(e => e.UserId == userId)
+                .ToListAsync(cancellationToken);
+        }
+        catch (Exception ex)
+        {
 
+            throw new ApplicationException($"An error occurred while fetching UserBook records for user {userId}.", ex);
+        }
+    
     }
 
     public async Task<IEnumerable<UserBook>> GetByBookIdAsync(Guid bookId, CancellationToken cancellationToken)
     {
-        return await _dbContext.Set<UserBook>().Where(e=>e.BookId == bookId).ToListAsync(cancellationToken);
-    }
+        try
+        {
+            return await _dbContext.Set<UserBook>()
+                .Include(ub => ub.ApplicationUser) 
+                .Include(ub => ub.Book) 
+                .Where(e => e.BookId == bookId)
+                .ToListAsync(cancellationToken);
+        }
+        catch (Exception ex)
+        {
+            throw new ApplicationException($"An error occurred while fetching UserBook records for book {bookId}.", ex);
+        }    }
 }

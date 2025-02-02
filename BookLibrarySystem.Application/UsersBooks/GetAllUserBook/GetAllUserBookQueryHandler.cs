@@ -4,7 +4,7 @@ using BookLibrarySystem.Domain.UsersBooks;
 
 namespace BookLibrarySystem.Application.UsersBooks.GetAllUserBook;
 
-internal sealed class GetAllUserBookQueryHandler : IQueryHandler<GetAllUserBookQuery, IEnumerable<UserBook>>
+internal sealed class GetAllUserBookQueryHandler : IQueryHandler<GetAllUserBookQuery, IEnumerable<UserBookDto>>
 {
     private readonly IUserBookRepository _userBookRepository;
 
@@ -13,10 +13,27 @@ internal sealed class GetAllUserBookQueryHandler : IQueryHandler<GetAllUserBookQ
         _userBookRepository = userBookRepository;
     }
 
-    public async  Task<Result<IEnumerable<UserBook>>> Handle(GetAllUserBookQuery request, CancellationToken cancellationToken)
+    public async Task<Result<IEnumerable<UserBookDto>>> Handle(GetAllUserBookQuery request, CancellationToken cancellationToken)
+
     {
-        var userBooks =await  _userBookRepository.GetAllAsync(null , "User,Book",cancellationToken:cancellationToken);
-        
-        return Result.Success(userBooks);
+        int skip =(request.PageNumber - 1) * request.PageSize; 
+
+        var userBooks =
+            await _userBookRepository.GetAllAsync(null, "ApplicationUser,Book",
+                skip: skip,
+                take: request.PageSize,
+                cancellationToken: cancellationToken);
+        var userBookDto = userBooks.Select(ub => new UserBookDto(
+            ub.Id,
+            ub.ApplicationUser.Id,
+            ub.ApplicationUser.Name.FirstName,
+            ub.ApplicationUser.Name.LastName,
+            ub.ApplicationUser.UserName,
+            ub.ApplicationUser.Email,
+            ub.Book.Id,
+            ub.Book.Title.Value,
+            ub.ReturnedDate
+        )).ToList();
+        return Result.Success<IEnumerable<UserBookDto>>(userBookDto);
     }
 }

@@ -13,6 +13,10 @@ public class UserBookErrors
     public static Error UserNotFound = new(
         "UserBook.UserNotFound",
         "The user was not found.");
+    
+    public static Error BookNotFound = new(
+        "UserBook.BookNotFound",
+        "The Book was not found.");
 
     public static Error BookUnavailable = new(
         "UserBook.BookUnavailable",
@@ -26,6 +30,9 @@ public class UserBookErrors
     public static Error InvalidBorrowedDate = new(
         "UserBook.InvalidBorrowedDate",
         "The borrowed date is valid.");
+    public static Error BookAlreadyReturned = new(
+        "UserBook.BookAlreadyReturned",
+        "The Book Is Already Returned.");
     
     public static Error Overlap = new(
         "UserBook.Overlap",

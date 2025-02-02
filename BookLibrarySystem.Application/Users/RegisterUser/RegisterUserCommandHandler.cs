@@ -1,4 +1,5 @@
-﻿using BookLibrarySystem.Application.Abstractions.Identity;
+﻿using BookLibrarySystem.Application.Abstractions.Email;
+using BookLibrarySystem.Application.Abstractions.Identity;
 using BookLibrarySystem.Application.Abstractions.Messaging;
 using BookLibrarySystem.Application.Exceptions;
 using BookLibrarySystem.Domain.Abstraction;
@@ -11,11 +12,13 @@ namespace BookLibrarySystem.Application.Users.RegisterUser;
     {
         private readonly IApplicationUserRepository _applicationUserRepository;
         private readonly IUserManager _userManager;
+        private readonly IEmailService _emailService;
 
-        public RegisterUserCommandHandler(IApplicationUserRepository applicationUserRepository, IUserManager userManager )
+        public RegisterUserCommandHandler(IApplicationUserRepository applicationUserRepository, IUserManager userManager, IEmailService emailService)
         {
             _applicationUserRepository = applicationUserRepository;
             _userManager = userManager;
+            _emailService = emailService;
         }
 
         public async Task<Result<RegisterUserResponseDTO>> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
@@ -49,7 +52,13 @@ namespace BookLibrarySystem.Application.Users.RegisterUser;
                     user.UserName!,
                     user.DateOfBirth
                 );
-
+                var subject = "Welcome to Book Library";
+                var message = $"Hello {user.Name.FirstName},\n\n" +
+                              "Thank you for registering with us! We're excited to have you on board.\n\n" +
+                              "Best regards,\n" +
+                              "Book Library Team";
+                 await _emailService.SendAsync(user.Email, subject, message);
+     
                 return Result.Success(userResponse);
             }
             catch (ConcurrencyException)

@@ -69,7 +69,6 @@ namespace BookLibrarySystem.Domain.Users
 
         public void ClearDomainEvents() => _domainEvents.Clear();
 
-        protected void RaiseDomainEvent(IDomainEvent domainEvent) => _domainEvents.Add(domainEvent);
-        public Guid Id { get; set; }
+        private void RaiseDomainEvent(IDomainEvent domainEvent) => _domainEvents.Add(domainEvent);
     }
 }

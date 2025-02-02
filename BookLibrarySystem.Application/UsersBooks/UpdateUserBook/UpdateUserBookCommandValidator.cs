@@ -7,14 +7,14 @@ public class UpdateUserBookCommandValidator : AbstractValidator<UpdateUserBookCo
     public UpdateUserBookCommandValidator()
     {
         RuleFor(c => c.UserBookId)
-            .NotEmpty().WithMessage("UserBook ID must not be empty.");
+            .NotEmpty().WithMessage("UserBook ID must not be empty.").OverridePropertyName("UserBookID");;
 
-        RuleFor(c => c.BorrowedDate)
-            .LessThanOrEqualTo(DateTime.Now).WithMessage("Borrowed date cannot be in the future.");
+        RuleFor(c => c.UserBookRequest.BorrowedDate)
+            .LessThanOrEqualTo(DateTime.Now).WithMessage("Borrowed date cannot be in the future.").OverridePropertyName("BorrowedDate");;
 
-        RuleFor(c => c.ReturnedDate)
-            .GreaterThanOrEqualTo(c => c.BorrowedDate)
-            .When(c => c.ReturnedDate.HasValue)
-            .WithMessage("Returned date cannot be earlier than borrowed date.");
+        RuleFor(c => c.UserBookRequest.ReturnedDate)
+            .GreaterThanOrEqualTo(c => c.UserBookRequest.BorrowedDate)
+            .When(c => c.UserBookRequest.ReturnedDate.HasValue)
+            .WithMessage("Returned date cannot be earlier than borrowed date.").OverridePropertyName("ReturnDate");;
     }
 }

@@ -1,4 +1,5 @@
 using System.Text;
+using BookLibrarySystem.Application.Abstractions.Email;
 using BookLibrarySystem.Application.Abstractions.Identity;
 using BookLibrarySystem.Application.Abstractions.JWT;
 using BookLibrarySystem.Domain.Abstraction;
@@ -8,6 +9,7 @@ using BookLibrarySystem.Domain.BooksGenres;
 using BookLibrarySystem.Domain.Genres;
 using BookLibrarySystem.Domain.Users;
 using BookLibrarySystem.Domain.UsersBooks;
+using BookLibrarySystem.Infrastructure.Email;
 using BookLibrarySystem.Infrastructure.ForIdentity;
 using BookLibrarySystem.Infrastructure.Jwt;
 using BookLibrarySystem.Infrastructure.Repositories;
@@ -40,6 +42,11 @@ public static class DependencyInjection
         services.AddScoped<ISignInManager, SignInManager>();
         services.AddScoped<IUserManager, UserManager>();
         services.AddScoped<IJwtTokenService,JwtTokenService>();
+        services.Configure<MailSettings>(configuration.GetSection("Mail"));
+        services.Configure<JwtSettings>(configuration.GetSection("Jwt"));
+
+        services.AddTransient<IEmailService, EmailService>();
+
         services.AddScoped<IUnitOfWork>(sp=>sp.GetRequiredService<ApplicationDbContext>());
 
         var jwtSettings = configuration.GetSection("Jwt");

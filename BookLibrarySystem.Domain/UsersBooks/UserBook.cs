@@ -78,7 +78,25 @@ namespace BookLibrarySystem.Domain.UsersBooks
             return Result.Success();
         }
         
-        
+        public void UpdateUserId(Guid userId)
+        {
+            if (userId == Guid.Empty)
+            {
+                throw new ArgumentException("Invalid user ID.", nameof(userId));
+            }
+
+            UserId = userId;
+        }
+
+        public void UpdateBookId(Guid bookId)
+        {
+            if (bookId == Guid.Empty)
+            {
+                throw new ArgumentException("Invalid book ID.", nameof(bookId));
+            }
+
+            BookId = bookId;
+        }
 
 
 

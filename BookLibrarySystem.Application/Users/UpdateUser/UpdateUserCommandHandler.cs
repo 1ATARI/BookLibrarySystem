@@ -1,3 +1,4 @@
+using BookLibrarySystem.Application.Abstractions.Email;
 using BookLibrarySystem.Application.Abstractions.Messaging;
 using BookLibrarySystem.Application.Exceptions;
 using BookLibrarySystem.Application.Users.RegisterUser;
@@ -13,14 +14,16 @@ internal sealed class UpdateUserCommandHandler : ICommandHandler<UpdateUserComma
     private readonly IApplicationUserRepository _applicationUserRepository;
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly IUnitOfWork _unitOfWork;
+    private readonly IEmailService _emailService;
 
     public UpdateUserCommandHandler(IApplicationUserRepository applicationUserRepository,
         UserManager<ApplicationUser> userManager,
-        IUnitOfWork unitOfWork)
+        IUnitOfWork unitOfWork, IEmailService emailService)
     {
         _applicationUserRepository = applicationUserRepository;
         _userManager = userManager;
         _unitOfWork = unitOfWork;
+        _emailService = emailService;
     }
 
    public async Task<Result> Handle(UpdateUserCommand request, CancellationToken cancellationToken)
@@ -90,6 +93,15 @@ internal sealed class UpdateUserCommandHandler : ICommandHandler<UpdateUserComma
             }
 
             await _unitOfWork.SaveChangesAsync(cancellationToken);
+            var subject = "Your Profile Has Been Updated!";
+            var message = $"Hello {user.Name.FirstName},\n\n" +
+                          "Your profile information has been successfully updated.\n\n" +
+                          "If you did not make this change, please contact our support team.\n\n" +
+                          "Best regards,\n" +
+                          "Book Library  Team";
+
+        await _emailService.SendAsync(user.Email, subject, message);
+
             return Result.Success();
         }
         catch (ConcurrencyException)

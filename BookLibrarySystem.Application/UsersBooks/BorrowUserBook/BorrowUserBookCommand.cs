@@ -3,4 +3,4 @@ using BookLibrarySystem.Domain.Abstraction;
 
 namespace BookLibrarySystem.Application.UsersBooks.BorrowUserBook;
 
-public record BorrowBookCommand(Guid UserId, Guid BookId, DateTime BorrowedDate) : ICommand<Guid>;
+public record BorrowBookCommand(BorrowBookRequest BorrowBookRequest) : ICommand<Guid>;

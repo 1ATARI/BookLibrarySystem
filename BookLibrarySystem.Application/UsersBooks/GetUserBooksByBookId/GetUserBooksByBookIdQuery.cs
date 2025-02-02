@@ -3,4 +3,4 @@ using BookLibrarySystem.Domain.UsersBooks;
 
 namespace BookLibrarySystem.Application.UsersBooks.GetUserBooksByBookId;
 
-public record GetUserBooksByBookIdQuery(Guid BookId) : IQuery<IEnumerable<UserBook>>;
+public record GetUserBooksByBookIdQuery(Guid BookId) : IQuery<IEnumerable<UserBookByBookIdDto>>;

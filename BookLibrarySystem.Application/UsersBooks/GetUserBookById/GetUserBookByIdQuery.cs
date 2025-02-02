@@ -4,4 +4,4 @@ using BookLibrarySystem.Domain.UsersBooks;
 
 namespace BookLibrarySystem.Application.UsersBooks.GetUserBookById;
 
-public record GetUserBookByIdQuery(Guid UserBookId) : IQuery<UserBook>;
+public record GetUserBookByIdQuery(Guid UserBookId) : IQuery<UserBookByIdDto>;
