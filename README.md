@@ -169,6 +169,11 @@ dotnet run
 - **GET** `/api/User/{userId}`
 - **PUT** `/api/User/{userId}`
 
+![1](https://github.com/user-attachments/assets/3b1fa6fd-d6c9-4641-97ab-1e4860c25ef5)
+![2](https://github.com/user-attachments/assets/e965c5cc-43f8-43ff-89e2-d34a87096faa)
+![3](https://github.com/user-attachments/assets/7d245baf-b992-4062-a8bc-61ab413338a6)
+
+
 ## 🧩 Design Patterns
 
 ### 1. Result Pattern
@@ -202,14 +207,4 @@ public interface IRepository<T> where T : IIdentifiable
     Task<bool> ExistsByIdAsync(Guid entityId, CancellationToken cancellationToken);
 }
 ```
-
-## 📈 Future Roadmap
-
-### Role-Based Access Control 👮
-- Librarian/Admin roles
-- Fine-grained permissions
-
-### Enhanced Reporting 📊
-- Borrowing history tracking
-- Popular book analytics
 
