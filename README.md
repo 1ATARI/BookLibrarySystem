@@ -5,8 +5,6 @@ A modern, scalable library management system built with .NET Core, enabling user
 
 ## Book Library System Overview
 
-**Figure 1: High-Level Architecture Diagram**
-
 ## ✨ Features
 
 ### Core Operations
