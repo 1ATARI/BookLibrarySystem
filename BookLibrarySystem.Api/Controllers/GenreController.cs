@@ -1,4 +1,3 @@
-using BookLibrarySystem.Api.Dto;
 using BookLibrarySystem.Application.Genres.CreateGenre;
 using BookLibrarySystem.Application.Genres.DeleteGenre;
 using BookLibrarySystem.Application.Genres.GetAllGenres;
