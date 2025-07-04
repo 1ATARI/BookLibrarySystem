@@ -94,4 +94,17 @@ public abstract class Repository<T> : IRepository<T> where T : class, IIdentifia
 
         return query;
     }
+    public async Task<int> GetCountAsync(
+        Expression<Func<T, bool>>? filter = null,
+        CancellationToken cancellationToken = default)
+    {
+        IQueryable<T> query = _dbContext.Set<T>();
+
+        if (filter != null)
+        {
+            query = query.Where(filter);
+        }
+
+        return await query.CountAsync(cancellationToken);
+    }
 }

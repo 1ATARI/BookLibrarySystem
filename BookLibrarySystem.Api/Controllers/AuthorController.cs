@@ -15,7 +15,6 @@ namespace BookLibrarySystem.Api.Controllers;
 [Route("api/[controller]")]
 [ApiController]
 [Authorize]
-
 public class AuthorController : ControllerBase
 {
     private readonly ISender _sender;
@@ -25,16 +24,17 @@ public class AuthorController : ControllerBase
         _sender = sender;
     }
 
-    [HttpGet]
+    [HttpGet("GetAll")]
     public async Task<IActionResult> GetAllAuthorsAsync(
         [FromQuery] int pageNumber = 1,
-        [FromQuery] int pageSize = 0,
+        [FromQuery] int pageSize = 10,
         CancellationToken cancellationToken = default)
     {
         if (pageSize == 0)
         {
-            pageSize = int.MaxValue;
+            pageSize = 10;
         }
+
         var query = new GetAllAuthorQuery { PageNumber = pageNumber, PageSize = pageSize };
         var result = await _sender.Send(query, cancellationToken);
 
@@ -54,7 +54,7 @@ public class AuthorController : ControllerBase
 
     [HttpPost]
     public async Task<IActionResult> CreateAuthorAsync(
-        [FromBody] AuthorDto authorDto,
+        [FromBody] AddAuthorCommand command,
         CancellationToken cancellationToken = default)
     {
         if (!ModelState.IsValid)
@@ -62,18 +62,15 @@ public class AuthorController : ControllerBase
             return BadRequest(ModelState);
         }
 
-        var name = new Name(authorDto.FirstName, authorDto.LastName);
-        var command = new AddAuthorCommand(name);
         var result = await _sender.Send(command, cancellationToken);
 
         return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Error);
     }
 
 
-    [HttpPut("{authorId:guid}")]
+    [HttpPut]
     public async Task<IActionResult> UpdateAuthorAsync(
-        Guid authorId,
-        [FromBody] AuthorDto authorDto,
+        [FromBody] UpdateAuthorCommand request,
         CancellationToken cancellationToken = default)
     {
         if (!ModelState.IsValid)
@@ -81,9 +78,8 @@ public class AuthorController : ControllerBase
             return BadRequest(ModelState);
         }
 
-        var name = new Name(authorDto.FirstName, authorDto.LastName);
-        var command = new UpdateAuthorCommand(authorId, name);
-        var result = await _sender.Send(command, cancellationToken);
+        var result = await _sender.Send(request, cancellationToken);
+
 
         return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Error);
     }
@@ -100,16 +96,14 @@ public class AuthorController : ControllerBase
     }
 
     /// <summary>
-    /// This method to add new book to existing Author 
+    /// Adds a new book to an existing author.
     /// </summary>
-    /// <param name="authorId">Author ID</param>
-    /// <param name="addBookDto">Book details </param>
-    /// <param name="cancellationToken"></param>
-    /// <returns></returns>
-    [HttpPost("{authorId:guid}/books")]
+    /// <param name="request">The command containing the author ID and book details.</param>
+    /// <param name="cancellationToken">Token to cancel the operation.</param>
+    /// <returns>An IActionResult indicating the result of the operation.</returns>
+    [HttpPost("books")]
     public async Task<IActionResult> AddBookToAuthor(
-        Guid authorId,
-        [FromBody] AddBookDto addBookDto,
+        [FromBody] AddBookToAuthorCommand request,
         CancellationToken cancellationToken = default)
     {
         if (!ModelState.IsValid)
@@ -117,8 +111,7 @@ public class AuthorController : ControllerBase
             return BadRequest(ModelState);
         }
 
-        var command = new AddBookToAuthorCommand(authorId, addBookDto);
-        var result = await _sender.Send(command, cancellationToken);
+        var result = await _sender.Send(request, cancellationToken);
 
         return result.IsSuccess ? Ok() : BadRequest(result.Error);
     }

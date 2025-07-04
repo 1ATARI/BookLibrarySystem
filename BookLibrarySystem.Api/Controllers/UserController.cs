@@ -26,7 +26,7 @@ namespace BookLibrarySystem.Api.Controllers;
         {
             if (pageSize == 0)
             {
-                pageSize = int.MaxValue;
+                pageSize = 10;
             }
             var query = new GetAllUsersQuery { PageNumber = pageNumber, PageSize = pageSize };
             var result = await _sender.Send(query, cancellationToken);

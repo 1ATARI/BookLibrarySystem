@@ -3,4 +3,10 @@ using BookLibrarySystem.Domain.Books;
 
 namespace BookLibrarySystem.Application.Authors.AddBookToAuthor;
 
-public sealed record AddBookToAuthorCommand(Guid AuthorId, AddBookDto BookDto) : ICommand;
+public sealed record AddBookToAuthorCommand(
+    Guid AuthorId,
+    string Title,
+    string Description,
+    DateTime PublicationDate,
+    int Pages
+) : ICommand;

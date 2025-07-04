@@ -126,23 +126,10 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Cryptography.Internal/9.0.1": {
-        "runtime": {
-          "lib/net9.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.124.61009"
-          }
-        }
-      },
+      "Microsoft.AspNetCore.Cryptography.Internal/9.0.1": {},
       "Microsoft.AspNetCore.Cryptography.KeyDerivation/9.0.1": {
         "dependencies": {
           "Microsoft.AspNetCore.Cryptography.Internal": "9.0.1"
-        },
-        "runtime": {
-          "lib/net9.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.124.61009"
-          }
         }
       },
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore/9.0.1": {
@@ -295,12 +282,6 @@
       "Microsoft.Extensions.Caching.Abstractions/9.0.1": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "9.0.1"
-        },
-        "runtime": {
-          "lib/net9.0/Microsoft.Extensions.Caching.Abstractions.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.124.61010"
-          }
         }
       },
       "Microsoft.Extensions.Caching.Memory/9.0.1": {
@@ -310,64 +291,27 @@
           "Microsoft.Extensions.Logging.Abstractions": "9.0.1",
           "Microsoft.Extensions.Options": "9.0.1",
           "Microsoft.Extensions.Primitives": "9.0.1"
-        },
-        "runtime": {
-          "lib/net9.0/Microsoft.Extensions.Caching.Memory.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.124.61010"
-          }
         }
       },
       "Microsoft.Extensions.Configuration.Abstractions/9.0.1": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "9.0.1"
-        },
-        "runtime": {
-          "lib/net9.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.124.61010"
-          }
         }
       },
       "Microsoft.Extensions.DependencyInjection/9.0.1": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.1"
-        },
-        "runtime": {
-          "lib/net9.0/Microsoft.Extensions.DependencyInjection.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.124.61010"
-          }
         }
       },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.1": {
-        "runtime": {
-          "lib/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.124.61010"
-          }
-        }
-      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.1": {},
       "Microsoft.Extensions.FileProviders.Abstractions/9.0.1": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "9.0.1"
-        },
-        "runtime": {
-          "lib/net9.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.124.61010"
-          }
         }
       },
       "Microsoft.Extensions.FileProviders.Embedded/9.0.1": {
         "dependencies": {
           "Microsoft.Extensions.FileProviders.Abstractions": "9.0.1"
-        },
-        "runtime": {
-          "lib/net9.0/Microsoft.Extensions.FileProviders.Embedded.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.124.61009"
-          }
         }
       },
       "Microsoft.Extensions.Identity.Core/9.0.1": {
@@ -375,12 +319,6 @@
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "9.0.1",
           "Microsoft.Extensions.Logging": "9.0.1",
           "Microsoft.Extensions.Options": "9.0.1"
-        },
-        "runtime": {
-          "lib/net9.0/Microsoft.Extensions.Identity.Core.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.124.61009"
-          }
         }
       },
       "Microsoft.Extensions.Identity.Stores/9.0.1": {
@@ -388,12 +326,6 @@
           "Microsoft.Extensions.Caching.Abstractions": "9.0.1",
           "Microsoft.Extensions.Identity.Core": "9.0.1",
           "Microsoft.Extensions.Logging": "9.0.1"
-        },
-        "runtime": {
-          "lib/net9.0/Microsoft.Extensions.Identity.Stores.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.124.61009"
-          }
         }
       },
       "Microsoft.Extensions.Logging/9.0.1": {
@@ -401,45 +333,20 @@
           "Microsoft.Extensions.DependencyInjection": "9.0.1",
           "Microsoft.Extensions.Logging.Abstractions": "9.0.1",
           "Microsoft.Extensions.Options": "9.0.1"
-        },
-        "runtime": {
-          "lib/net9.0/Microsoft.Extensions.Logging.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.124.61010"
-          }
         }
       },
       "Microsoft.Extensions.Logging.Abstractions/9.0.1": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.1"
-        },
-        "runtime": {
-          "lib/net9.0/Microsoft.Extensions.Logging.Abstractions.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.124.61010"
-          }
         }
       },
       "Microsoft.Extensions.Options/9.0.1": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.1",
           "Microsoft.Extensions.Primitives": "9.0.1"
-        },
-        "runtime": {
-          "lib/net9.0/Microsoft.Extensions.Options.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.124.61010"
-          }
         }
       },
-      "Microsoft.Extensions.Primitives/9.0.1": {
-        "runtime": {
-          "lib/net9.0/Microsoft.Extensions.Primitives.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.124.61010"
-          }
-        }
-      },
+      "Microsoft.Extensions.Primitives/9.0.1": {},
       "Microsoft.Identity.Client/4.61.3": {
         "dependencies": {
           "Microsoft.IdentityModel.Abstractions": "8.3.1",
@@ -620,14 +527,7 @@
           }
         }
       },
-      "System.Formats.Asn1/9.0.1": {
-        "runtime": {
-          "lib/net9.0/System.Formats.Asn1.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.124.61010"
-          }
-        }
-      },
+      "System.Formats.Asn1/9.0.1": {},
       "System.IdentityModel.Tokens.Jwt/8.3.1": {
         "dependencies": {
           "Microsoft.IdentityModel.JsonWebTokens": "8.3.1",
@@ -720,14 +620,7 @@
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         }
       },
-      "System.Text.Json/9.0.1": {
-        "runtime": {
-          "lib/net9.0/System.Text.Json.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.124.61010"
-          }
-        }
-      },
+      "System.Text.Json/9.0.1": {},
       "System.Threading.Tasks.Extensions/4.5.4": {},
       "System.Windows.Extensions/6.0.0": {
         "dependencies": {
@@ -759,7 +652,7 @@
         },
         "runtime": {
           "BookLibrarySystem.Application.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -771,7 +664,7 @@
         },
         "runtime": {
           "BookLibrarySystem.Domain.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }

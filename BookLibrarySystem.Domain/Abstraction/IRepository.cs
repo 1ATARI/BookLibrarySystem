@@ -18,4 +18,7 @@ public interface IRepository <T> where T : IIdentifiable
     void Update(T entity  ,CancellationToken cancellationToken = default);
     Task<bool> DeleteAsync(Guid entityId , CancellationToken cancellationToken);
     Task<bool> ExistsByIdAsync(Guid entityId , CancellationToken cancellationToken);
+    Task <int> GetCountAsync(
+        Expression<Func<T, bool>>? filter = null,
+        CancellationToken cancellationToken = default);
 }

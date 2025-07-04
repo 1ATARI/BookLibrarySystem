@@ -1,5 +1,4 @@
 ﻿using BookLibrarySystem.Application.Abstractions.Messaging;
-using BookLibrarySystem.Application.Exceptions;
 using BookLibrarySystem.Domain.Abstraction;
 using BookLibrarySystem.Domain.Authors;
 using BookLibrarySystem.Domain.Books;
@@ -25,7 +24,8 @@ public class UpdateBookCommandHandler : ICommandHandler<UpdateBookCommand>
         IGenreRepository genreRepository,
         IUnitOfWork unitOfWork,
         IAuthorRepository authorRepository,
-        ILogger<UpdateBookCommandHandler> logger, IBookGenreRepository bookGenreRepository)
+        ILogger<UpdateBookCommandHandler> logger,
+        IBookGenreRepository bookGenreRepository)
     {
         _bookRepository = bookRepository;
         _genreRepository = genreRepository;
@@ -39,19 +39,20 @@ public class UpdateBookCommandHandler : ICommandHandler<UpdateBookCommand>
     {
         try
         {
-            var book = await _bookRepository.GetByIdAsync(request.BookId,"Genres", cancellationToken: cancellationToken);
+            var book = await _bookRepository.GetByIdAsync(request.BookId, "Genres",
+                cancellationToken: cancellationToken);
             if (book == null)
             {
                 return Result.Failure<Book>(BookErrors.NotFound);
             }
 
-            var updateDetailsResult = await UpdateBookDetailsAsync(book, request.BookDto, cancellationToken);
+            var updateDetailsResult = await UpdateBookDetailsAsync(book, request, cancellationToken);
             if (updateDetailsResult.IsFailure)
             {
                 return updateDetailsResult;
             }
 
-            var updateGenresResult = await UpdateBookGenresAsync(book, request.BookDto.GenreIds, cancellationToken);
+            var updateGenresResult = await UpdateBookGenresAsync(book, request.GenreIds, cancellationToken);
             if (updateGenresResult.IsFailure)
             {
                 return updateGenresResult;
@@ -81,32 +82,31 @@ public class UpdateBookCommandHandler : ICommandHandler<UpdateBookCommand>
         }
     }
 
-    private async Task<Result> UpdateBookDetailsAsync(Book book, UpdateBookDto bookDto,
+    private async Task<Result> UpdateBookDetailsAsync(Book book, UpdateBookCommand command,
         CancellationToken cancellationToken)
     {
-
-        if (bookDto.PublicationDate == default)
+        if (command.PublicationDate == default)
         {
             return Result.Failure<Book>(BookErrors.InvalidPublishDate);
         }
 
-        var author = await _authorRepository.GetByIdAsync(bookDto.AuthorId, cancellationToken: cancellationToken);
+        var author = await _authorRepository.GetByIdAsync(command.AuthorId, cancellationToken: cancellationToken);
         if (author == null)
         {
             return Result.Failure<Book>(AuthorErrors.NotFound);
         }
 
         book.UpdateDetails(
-            new Title(bookDto.Title),
-            new Description(bookDto.Description),
-            bookDto.PublicationDate,
-            bookDto.Pages,
-            bookDto.AuthorId
+            new Title(command.Title),
+            new Description(command.Description),
+            command.PublicationDate,
+            command.Pages,
+            command.AuthorId
         );
 
-        if (book.IsAvailable != bookDto.IsAvailable)
+        if (book.IsAvailable != command.IsAvailable)
         {
-            var availabilityResult = bookDto.IsAvailable
+            var availabilityResult = command.IsAvailable
                 ? book.MarkAsAvailable()
                 : book.MarkAsUnavailable();
 
@@ -122,28 +122,22 @@ public class UpdateBookCommandHandler : ICommandHandler<UpdateBookCommand>
     private async Task<Result> UpdateBookGenresAsync(Book book, List<Guid> newGenreIds,
         CancellationToken cancellationToken)
     {
-        // Get the current genre IDs associated with the book
         var currentGenreIds = book.Genres.Select(g => g.GenreId).ToList();
 
-        // Find genres to remove
         var genresToRemove = book.Genres
             .Where(bg => !newGenreIds.Contains(bg.GenreId))
             .ToList();
 
-        // Remove the genres from the book
         foreach (var genreToRemove in genresToRemove)
         {
-            book.Genres.Remove(genreToRemove); // Remove from the collection
-            await _bookGenreRepository.DeleteAsync(genreToRemove.Id,
-                cancellationToken); // Explicitly delete from the database
+            book.Genres.Remove(genreToRemove);
+            await _bookGenreRepository.DeleteAsync(genreToRemove.Id, cancellationToken);
         }
 
-        // Find genres to add
         var genresToAdd = newGenreIds
             .Where(id => !currentGenreIds.Contains(id))
             .ToList();
 
-        // Add the new genres to the book
         foreach (var genreId in genresToAdd)
         {
             var genre = await _genreRepository.GetByIdAsync(genreId, cancellationToken: cancellationToken);
@@ -152,9 +146,9 @@ public class UpdateBookCommandHandler : ICommandHandler<UpdateBookCommand>
                 return Result.Failure<Book>(GenreErrors.NotFound);
             }
 
-            var bookGenre = new BookGenre(book.Id, genre.Id); // Create a new BookGenre entity
-            book.Genres.Add(bookGenre); // Add to the collection
-            await _bookGenreRepository.AddAsync(bookGenre, cancellationToken); // Explicitly add to the database
+            var bookGenre = new BookGenre(book.Id, genre.Id);
+            book.Genres.Add(bookGenre);
+            await _bookGenreRepository.AddAsync(bookGenre, cancellationToken);
         }
 
         return Result.Success();

@@ -21,7 +21,7 @@ namespace BookLibrarySystem.Api.Controllers;
             _sender = sender;
         }
         
-        [HttpGet]
+        [HttpGet("GetAll")]
         public async Task<IActionResult> GetAllBooksAsync(
             [FromQuery] int pageNumber = 1,
             [FromQuery] int pageSize = 0,
@@ -29,7 +29,7 @@ namespace BookLibrarySystem.Api.Controllers;
         {
             if (pageSize == 0)  
             {
-                pageSize = int.MaxValue;
+                pageSize = 10;
             }
             var query = new GetAllBooksQuery{ PageNumber = pageNumber, PageSize = pageSize };
 
@@ -51,7 +51,7 @@ namespace BookLibrarySystem.Api.Controllers;
         }
         [HttpPost]
         public async Task<IActionResult> CreateBookAsync(
-            [FromBody] CreateBookDto bookDto,
+            [FromBody] CreateBookCommand request,
             CancellationToken cancellationToken = default)
         {
             if (!ModelState.IsValid)
@@ -59,47 +59,35 @@ namespace BookLibrarySystem.Api.Controllers;
                 return BadRequest(ModelState);
             }
 
-            var query = new CreateBookCommand(bookDto);
-            var result = await _sender.Send(query, cancellationToken);
+            var result = await _sender.Send(request, cancellationToken);
             return result.IsSuccess ? Ok() : NotFound(result.Error);
         }
 
-        [HttpPut("{bookId:guid}")]
+        [HttpPut]
         public async Task<IActionResult> UpdateBookAsync(
-            Guid bookId,
-            [FromBody] UpdateBookDto bookDto,
+            [FromBody] UpdateBookCommand request,
             CancellationToken cancellationToken = default)
         {
             if (!ModelState.IsValid)
             {
-                var errors = ModelState.Values.SelectMany(v => v.Errors)
-                    .Select(e => e.ErrorMessage)
-                    .ToList();
-                return BadRequest(new { Errors = errors });
-                
+                return BadRequest(ModelState);
             }
         
-            var command = new UpdateBookCommand(bookId, bookDto);
-            var result = await _sender.Send(command, cancellationToken);
+            var result = await _sender.Send(request, cancellationToken);
         
             return result.IsSuccess ? Ok() : BadRequest(result.Error);
         }
 
         [HttpDelete]
-        public async Task<IActionResult> DeleteBookAsync(Guid bookId)
+        public async Task<IActionResult> DeleteBookAsync(DeleteBookCommand request)
         {
             if (!ModelState.IsValid)
             {
-                var errors = ModelState.Values.SelectMany(v => v.Errors)
-                    .Select(e => e.ErrorMessage)
-                    .ToList();
-                return BadRequest(new { Errors = errors });
-                
+                return BadRequest(ModelState);
             }
 
-            var command = new DeleteBookCommand(bookId);
             
-            var result = await _sender.Send(command);
+            var result = await _sender.Send(request);
             return result.IsSuccess ? Ok() : NotFound(result.Error);
 
         }

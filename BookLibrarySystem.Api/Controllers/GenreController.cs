@@ -13,7 +13,6 @@ namespace BookLibrarySystem.Api.Controllers;
 [Route("api/[controller]")]
 [ApiController]
 [Authorize]
-
 public class GenreController : ControllerBase
 {
     private readonly ISender _sender;
@@ -31,7 +30,7 @@ public class GenreController : ControllerBase
     {
         if (pageSize == 0)
         {
-            pageSize = int.MaxValue;
+            pageSize = 10;
         }
 
         var query = new GetAllGenresQuery { PageNumber = pageNumber, PageSize = pageSize };
@@ -52,21 +51,18 @@ public class GenreController : ControllerBase
 
     [HttpPost]
     public async Task<IActionResult> CreateGenreAsync(
-        GenreDto genreDto,
+        CreateGenreCommand request,
         CancellationToken cancellationToken = default)
     {
-        var command = new CreateGenreCommand(genreDto.Name, genreDto.Description);
-        var result = await _sender.Send(command, cancellationToken);
+        var result = await _sender.Send(request, cancellationToken);
         return result.IsSuccess ? Ok() : NotFound(result.Error);
     }
-    
-    [HttpPost("{genreId:guid}")]
+
+    [HttpPut]
     public async Task<IActionResult> UpdateGenreAsync(
-        Guid genreId,
-        [FromBody] GenreDto genreDto,
+        [FromBody] UpdateGenreCommand command,
         CancellationToken cancellationToken = default)
     {
-        var command = new UpdateGenreCommand(genreId , genreDto.Name, genreDto.Description);
         var result = await _sender.Send(command, cancellationToken);
         return result.IsSuccess ? Ok() : NotFound(result.Error);
     }

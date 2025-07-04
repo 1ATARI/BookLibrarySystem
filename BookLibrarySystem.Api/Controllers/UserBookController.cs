@@ -25,7 +25,7 @@ public class UserBookController : ControllerBase
         _sender = sender;
     }
 
-    [HttpGet]
+    [HttpGet("GetAll")]
     public async Task<IActionResult> GetAllUserBooks(
         [FromQuery] int pageNumber = 1,
         [FromQuery] int pageSize = 0,
@@ -33,7 +33,7 @@ public class UserBookController : ControllerBase
     {
         if (pageSize == 0)
         {
-            pageSize = int.MaxValue;
+            pageSize = 10;
         }
 
         {
@@ -70,10 +70,9 @@ public class UserBookController : ControllerBase
 
 
     [HttpPost("borrow")]
-    public async Task<IActionResult> BorrowBook([FromBody]BorrowBookRequest request , CancellationToken cancellationToken = default)
+    public async Task<IActionResult> BorrowBook([FromBody]BorrowBookCommand request , CancellationToken cancellationToken = default)
     {
-        var command = new BorrowBookCommand(request);
-        var result = await _sender.Send(command,cancellationToken);
+        var result = await _sender.Send(request,cancellationToken);
         return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Error);
     }
     
@@ -105,14 +104,4 @@ public class UserBookController : ControllerBase
             Ok() :
             BadRequest(result.Error);
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

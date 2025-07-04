@@ -12,10 +12,12 @@ public class AddBookToAuthorCommandHandler : ICommandHandler<AddBookToAuthorComm
 {
     private readonly IAuthorRepository _authorRepository;
     private readonly IBookRepository _bookRepository;
-
     private readonly IUnitOfWork _unitOfWork;
 
-    public AddBookToAuthorCommandHandler(IAuthorRepository authorRepository, IUnitOfWork unitOfWork, IBookRepository bookRepository)
+    public AddBookToAuthorCommandHandler(
+        IAuthorRepository authorRepository,
+        IUnitOfWork unitOfWork,
+        IBookRepository bookRepository)
     {
         _authorRepository = authorRepository;
         _unitOfWork = unitOfWork;
@@ -37,11 +39,10 @@ public class AddBookToAuthorCommandHandler : ICommandHandler<AddBookToAuthorComm
                 return Result.Failure(AuthorErrors.NotFound);
             }
 
-            var title = new Title(request.BookDto.Title);
-            var description = new Description(request.BookDto.Description);
-            var book = Book.Create(title, description, request.BookDto.PublicationDate, request.BookDto.Pages, request.AuthorId);
-            await _bookRepository.AddAsync(book , cancellationToken);
-
+            var title = new Title(request.Title);
+            var description = new Description(request.Description);
+            var book = Book.Create(title, description, request.PublicationDate, request.Pages, request.AuthorId);
+            await _bookRepository.AddAsync(book, cancellationToken);
 
             await _unitOfWork.SaveChangesAsync(cancellationToken);
 
@@ -57,4 +58,3 @@ public class AddBookToAuthorCommandHandler : ICommandHandler<AddBookToAuthorComm
         }
     }
 }
-
